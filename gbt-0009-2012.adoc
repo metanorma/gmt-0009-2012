@@ -1,0 +1,498 @@
+= GM/T 0009-2012 SM2 Cryptography Algorithm Application Specification (English Translation)
+Ronald Tse <ronald.tse@ribose.com>
+v0.1, October 10, 2017: Draft Translation
+:stem:
+
+== Scope
+
+This standard defines the usage methods of the SM2 cryptographic algorithm, as
+well as data formats for secret key, encryption and signature data.
+
+This standard is applicable to the usage of the SM2 cryptographic algorithm,
+and to the development and testing of devices and systems that support the
+SM2 cryptographic algorithm.
+
+
+== Normative References
+
+The following documents are necessary for the application of this document. For
+referenced documents that are dated, only the dated document applies to this
+document. For referenced documents that are undated, the latest version
+(including all errata) applies to this document.
+
+* GB/T AAAA, SM2 Elliptic Curve Cryptography Public Key Algorithm
+* GB/T BBBB, SM3 Cryptographic Hash Algorithm
+
+
+== Terms And Definitions
+
+algorithm identifier::
+  used to identify the algorithm that generated a digital message
+
+SM2 algorithm::
+  an elliptic curve cryptographic algorithm, with a 256 bit long secret key.
+
+SM3 algorithm::
+  a hash algorithm with an output length of 256 bits.
+
+
+== Symbols And Abbreviations
+
+The following abbreviations are applicable to this document:
+
+EC::
+  Electronic Code Book mode
+
+ECC::
+  Elliptic Curve Cryptography
+
+ID::
+  User identification
+
+
+== SM2 Key Pairs
+
+SM2 Private Key::
+  The SM2 Private Key is a whole number larger than 1 but less than (n-1) (n is
+  the number of rounds of the SM2 algorithm, refer to GM/T 0003 for its
+  value).  It is abbreviated as `k`, with a length of 256 bits.
+
+SM2 Public Key::
+  The SM2 Public Key is a point on the SM2 Curve, represented by its x- and
+  y-coordinates as (x, y), abbreviated as `Q`, with each coordinate of length
+  256 bits.
+
+
+== Data Conversion
+
+In SM2 calculations these 4 mechanisms are used to convert between Octet
+Strings and Bit Strings.
+
+
+=== Bit String to Octet String Conversion
+
+If the bit string length is not a multiple of 8, add `0` to its left to ensure
+the length is divisible by 8. Then create an octet string as below.
+
+INPUT: Bit String stem:[B] of length stem:[b l e n]
+
+OUTPUT: Octet String stem:[M] of length stem:[m l e n], stem:[m l e n] is the whole
+number portion of stem:[(b l e n + 7)/8].
+
+STEPS: Converting bit string stem:[B = B_0 B_1 ... B_{b l e n - 1}] to octet
+string stem:[M = M_0 M_1 ... M_{m l e n - 1}], stem:[0 <= i <= m l e n - 1].
+
+[stem]
+++++
+M_i = B_{b l e n-8-8(m l e n-1-i)} B_{b l e n-7-8(m l e n-1-i)} ... B_{b l e n-1-8(m l e n-1-i)}
+++++
+
+[stem]
+++++
+M_0 = text(the leftmost ) 8 - b l e n % 8 text( position set to ) 0 text(, the right of it is ) B_0 B_1 … B_(8 - 8(m l e n) + b l e n - 1)
+++++
+
+OUTPUT stem:[M].
+
+
+=== Octet String to Bit String Conversion
+
+Octet String to Bit String Conversion as follows:
+
+INPUT: Octet String stem:[M] of length stem:[m l e n]
+
+OUTPUT: Octet String stem:[B] of length stem:[b l e n = (8 times m l e n)]
+
+STEPS: Converting octet string stem:[M = M_0 M_1 … M_(m l e n-1)] to bit string stem:[B = B_0 B_1 … B_(b l e n-1)], stem:[0 <= i <= m l e n-1].
+
+[stem]
+++++
+B_(8i) B_(8i+1) … B_(8i+7) = M_i
+++++
+
+OUTPUT stem:[B].
+
+=== Integer to Octet String Conversion
+
+Converting an integer into an octet string, the basic method is to first
+represent the integer in binary, and the output the bit string as an octet
+string. This is the conversion flow.
+
+INPUT: A non-negative stem:[x]; expected octet string length stem:[m l e n].
+Where stem:[2^(8 (m l e n)) > x]
+
+OUTPUT: Octet string stem:[M] of length stem:[m l e n]
+
+STEPS: Convert a number stem:[x] based on stem:[2^8 = 256],
+stem:[x =
+x_{m l e n-1}2^(8(m l e n-1)) +
+x_{m l e n-2}2^(8(m l e n-2)) +
+... x_{1}2^8 + x_0] into stem:[M = M_{0}M_{1} … M_{m l e n-1}]
+
+Given stem:[0 <= i <= m l e n–1], set:
+
+[stem]
+++++
+M_{i} = x_{m l e n-1-i}
+++++
+
+OUTPUT: stem:[M]
+
+
+=== Octet String to Whole Number Conversion
+
+It is simple to convert an Octet String into a Base 256 whole number. Conversion
+method below.
+
+INPUT: Octet String stem:[M]
+
+OUTPUT: Whole number stem:[x]
+
+STEPS: Convert stem:[M = M_0 M_1 … M_{m l e n-1}] into whole number stem:[x].
+
+stem:[M_i] is like a whole number within stem:[[0~255]]
+
+[stem]
+++++
+x = sum_{i=0}^{m l e n-1} 2^{8(m l e n-1-i)} M_i
+++++
+
+Output stem:[x].
+
+
+== Data Format
+
+=== Secret Key Data Format
+
+SM2 secret key data format as described in ASN.1 is:
+
+[source]
+----
+SM2PrivateKey ::= INTEGER
+----
+
+SM2 public key data format as described in ASN.1 is:
+
+[source]
+----
+SM2PublicKey ::= BIT STRING
+----
+
+`SM2PublicKey` is of type `BIT STRING`, content is `04 | X | Y`, within that, `X`
+and `Y` specifies the x- and y-coordinates of the public key, each of 256-bits
+long.
+
+=== Encrypted Data Format
+
+SM2 encrypted data format as described in ASN.1 is:
+
+[source]
+----
+SM2Cipher ::= SEQENCE{
+  XCoordinate     INTEGER,                -- x-coordinate
+  YCoordinate     INTEGER,                -- y-coordinate
+  HASH            OCTET STRING SIZE(32),  -- hash value
+  CipherText      OCTET STRING            -- ciphertext
+}
+----
+
+`HASH` is the hash value calculated from SM3, with a fixed bit length of
+256-bits. `CipherText` is of same length as its plaintext.
+
+=== Signature Data Format
+
+SM2 signature data format as described in ASN.1 is:
+
+[source]
+----
+SM2Signature ::= SEQUENCE{
+  R   INTEGER,  -- first portion of signature
+  S   INTEGER   -- second portion of signature
+}
+----
+
+`R` and `S` are of 256 bits long.
+
+
+=== Enveloped Secret Key Data Format
+
+When transferring a SM2 secret key, the SM2 secret key should be encrypted. The
+encryption method is:
+
+. Create a symmetric secret key;
+
+. According to the necessary calculation methods, encrypt the SM2 private key
+  to obtain the private key's ciphertext. If the symmetric encryption method is a
+  block cipher, utilize ECB mode;
+
+. Utilize SM2 public key to encrypt the symmetric secret key to obtain
+  symmetric secret key ciphertext;
+
+. Put the SM2 private key ciphertext, symmetric secret key ciphertext into an
+  Enveloped Key Data Format.
+
+SM2 Enveloped Secret Key data format as described in ASN.1 is:
+
+[source]
+----
+SM2EnvelopedKey ::=  SEQUENCE{
+  symAlgID                AlgorithmIdentifier,  -- Symmetric Encryption Algorithm ID
+  symEncryptedKey         SM2Cipher,            -- Symmetric Encryption Key encrypted by SM2 Public Key
+  Sm2PublicKey            SM2PublicKey,         -- SM2 Public Key
+  Sm2EncryptedPrivateKey  BIT STRING            -- SM2 Private Key Encrypted by Symmetric Encryption
+}
+----
+
+== Pre-processing
+
+=== Pre-processing 1
+
+Pre-processing 1 is to use the signing party's identifier and signature public
+key, to calculate value `Z`.
+`Z` is used in pre-processing 2, which is the SM2 key negotiation.
+
+INPUT:
+
+* `ID`: Byte String. User Identifier.
+* `Q`: `SM2PublicKey`. User Public Key.
+
+OUTPUT:
+
+* `Z`: Byte String. Output of Pre-processing 1.
+
+Formula is:
+[source]
+----
+Z = SM3(ENTL|ID|a|b|xG|yG|xA|yA)
+----
+
+Where:
+
+* `ENTL` is a 2 byte field indicating bit-length of ID;
+* `ID` is the User Identifier;
+* `a`, `b` is the System Curve Parameter;
+* `xG`, `yG` are the base points;
+* `xA`, `yA` represents the User's Public Key.
+
+For detailed calculations see GM/T 0003 and GM/T 0004.
+
+
+=== Pre-processing 2
+
+Pre-processing 2 is the process of using value `Z` and the message to be signed,
+utilize SM3 to calculate hash value `H`. Hash value `H` is used for
+the calculation of SM2 digital signatures.
+
+INPUT:
+
+* `Z`: Byte String. Input to Pre-processing 2.
+* `M`: Byte String. Message to be signed.
+
+OUTPUT:
+
+* `H`: Byte String. Hash Value.
+
+Calculation:
+[source]
+----
+H = SM3(Z|M)
+----
+
+For detailed calculations see GM/T 0003 and GM/T 0004.
+
+
+== Calculation Process
+
+=== Generation of Secret Key
+
+SM2 secret key generation is the process of using SM2 calculations to create a
+pair of keys, this pair of keys include a private key and the corresponding
+public key. The private key is of 256-bits long and the public key 512-bits
+long.
+
+
+INPUT:
+
+* None
+
+OUTPUT:
+
+* `k`: `SM2PrivateKey`. SM2 Private Key.
+* `Q`: `SM2PublicKey`. SM2 Public Key.
+
+For detailed calculations see GM/T 0003.
+
+
+=== Encryption
+
+SM2 Encryption is to use the public key of the given key pair to perform
+encryption, in order to generate ciphertext. This ciphertext can only be
+decrypted by the corresponding private key.
+
+INPUT:
+
+* `Q`: `SM2PublicKey`. SM2 Public Key.
+* `m`: Byte String. Plaintext To Be Encrypted.
+
+OUTPUT:
+
+* `c`: `SM2Cipher`. Ciphertext.
+
+Where:
+
+* Output `c` is in the format defined by Section 7.2;
+* Output `c`'s `XCoordinate`, `YCoordinate` are randomly generated x- and y-coordinates;
+* Output `c`'s `HASH` was calculated as `HASH = SM3( x | m | y )`, where `x`, `y` are
+  `Q`'s x- and y-coordinates;
+
+Output `c`'s CipherText is the ciphertext, its length is identical to that of
+the plaintext.
+
+For detailed calculations see GM/T 0003 and GM/T 0004.
+
+
+=== Decryption
+
+SM2 Decryption means using a private key to decrypt a ciphertext encrypted by
+the corresponding public key to obtain the plaintext.
+
+INPUT:
+
+* `d`: `SM2PrivateKey`. SM2 private key.
+* `c`: `SM2Cipher`. Ciphertext.
+
+OUTPUT:
+
+* `m`: Byte String. Corresponding plaintext to ciphertext.
+
+`m` is the decrypted plaintext of `SM2Cipher`, the length of plaintext is
+the same as that of the input ciphertext `c`.
+
+For detailed calculations see GM/T 0003.
+
+
+=== Digital Signature
+
+SM2 signature is to obtain a signature by using the result of pre-processing
+2's together with the signer's private key through the signing process.
+
+INPUT:
+
+* `d`: `SM2PrivateKey`. Signer's Private Key.
+* `H`: Byte String. Result of Pre-processing 2.
+
+OUTPUT:
+
+* `sign`: `SM2Signature`. Signature value.
+
+For detailed calculations see GM/T 0003.
+
+
+=== Signature Verification
+
+SM2 signature verification is to verify a signature through using the result of
+pre-processing 2, the signature value and the signer's public key, through a
+verification process.
+
+INPUT:
+
+* `H`. Byte String. Result of Pre-processing 2
+* `sign`. `SM2Signature`. Signature value
+* `Q`. `PublicKey`. Signer's Public Key.
+
+OUTPUT:
+
+* `true` if "`validation passed`", `false` if "`validation failed`".
+
+For detailed calculations see GM/T 0003.
+
+
+=== Secret Key Negotiation
+
+Secret key negotiation is the negotiation process between two users for the
+setup of a shared secret key.
+
+Assume the parties of negotiation are stem:[A] and stem:[B], their secret key
+pairs are stem:[(d_A, Q_A)] and stem:[(d_B, Q_B)], both parties need to receive
+a secret key data of stem:[k l e n] bits long.
+Secret key negotiation is split into two stages.
+
+==== Stage 1: Create A Temporary Secret Key Pair
+
+User stem:[A]:
+
+* Utilize the secret key generation algorithm to create temporary key pair stem:[(r_A, R_A)],
+send stem:[R_A] and user stem:[A]'s user identifier stem:[ID_A] to user stem:[B].
+
+User stem:[B]:
+
+* Utilize the secret key generation algorithm to create temporary key pair stem:[(r_B, R_B)],
+send stem:[R_B] and user stem:[B]'s user identifier stem:[ID_B] to user stem:[A].
+
+==== Stage 2: Calculate The Shared Secret Key
+
+User stem:[A]:
+
+* INPUTS:
+
+** stem:[Q_A]: `SM2PublicKey`. User stem:[A]'s public key.
+** stem:[Q_B]: `SM2PublicKey`. User stem:[B]'s public key.
+** stem:[R_A]: `SM2PublicKey`. User stem:[A]'s temporary public key.
+** stem:[ID_A]: `OCTET STRING`. User stem:[A]'s user identifier.
+** stem:[R_B]: `SM2PublicKey`. User stem:[B]'s temporary public key.
+** stem:[ID_B]: `OCTET STRING`. User stem:[A]'s user identifier.
+** stem:[d_A]: `SM2PrivateKey`. User stem:[A]'s private key.
+** stem:[r_A]: `SM2PrivateKey`. User stem:[A]'s temporary private key.
+** stem:[k l e n]: `INTEGER`. Required bit-length of shared secret key.
+
+* OUTPUTS:
+
+** stem:[K]: `OCTET STRING`. Secret key of stem:[k l e n] bits long.
+
+* STEPS:
+
+.. Use stem:[ID_A] and stem:[Q_A] as input to pre-processing 1 to obtain stem:[Z_A];
+.. Use stem:[ID_B] and stem:[Q_B] as input to pre-processing 1 to obtain stem:[Z_B];
+.. Use stem:[k l e n], stem:[Z_A], stem:[Z_B], stem:[d_A], stem:[r_A],
+  stem:[R_A], stem:[Q_B], stem:[R_B] as input to calculate stem:[K].
+
+
+User stem:[B]:
+
+* INPUTS:
+
+** stem:[Q_B]: `SM2PublicKey`. User stem:[B]'s public key.
+** stem:[Q_A]: `SM2PublicKey`. User stem:[A]'s public key.
+** stem:[R_B]: `SM2PublicKey`. User stem:[B]'s temporary public key.
+** stem:[ID_B]: `OCTET STRING`. User stem:[A]'s user identifier.
+** stem:[R_A]: `SM2PublicKey`. User stem:[A]'s temporary public key.
+** stem:[ID_A]: `OCTET STRING`. User stem:[A]'s user identifier.
+** stem:[d_B]: `SM2PrivateKey`. User stem:[B]'s private key.
+** stem:[r_B]: `SM2PrivateKey`. User stem:[B]'s temporary private key.
+** stem:[k l e n]: `INTEGER`. Required bit-length of shared secret key.
+
+* OUTPUTS:
+
+** stem:[K]: `OCTET STRING`. Secret key of stem:[k l e n] bits long.
+
+* STEPS:
+
+.. Use stem:[ID_A] and stem:[Q_A] as input to pre-processing 1 to obtain stem:[Z_A];
+.. Use stem:[ID_B] and stem:[Q_B] as input to pre-processing 1 to obtain stem:[Z_B];
+.. Use stem:[k l e n], stem:[Z_A], stem:[Z_B], stem:[d_A], stem:[r_A],
+  stem:[R_A], stem:[Q_B], stem:[R_B] as input to calculate stem:[K].
+
+For detailed calculations see GM/T 0003 and GM/T 0004.
+
+
+== Default Value For User Identifier `ID`
+
+Without pre-agreement, the user identifier `ID` should have length of 16 bytes,
+with the default value from left to right as the following
+(the ASCII hexadecimal representation of string `1234567812345678`):
+
+[source]
+----
+0x31 0x32 0x33 0x34 0x35 0x36 0x37 0x38 0x31 0x32 0x33 0x34 0x35 0x36 0x37 0x38
+----
+
