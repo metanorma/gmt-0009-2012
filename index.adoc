@@ -1,4 +1,4 @@
-= GM/T 0009-2012 SM2 Cryptography Algorithm Application Specification: English Translation
+= GM/T 0009:2012 SM2 Cryptographic Algorithm Application Specification: English Translation
 Ronald Tse <ronald.tse@ribose.com>
 v0.2, January 9, 2017: Added foreword and introduction
 :stem:
@@ -16,8 +16,6 @@ This standard is proposed by the State Cryptographic Administration of China.
 
 This standard is managed by the National Information Security Standardization
 Technical Committee (SAC/TC 260).
-
-Appendix A of this standard is considered normative.
 
 This standard was drafted by these organizations: 
 
