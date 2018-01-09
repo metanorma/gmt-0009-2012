@@ -1,7 +1,65 @@
-= GM/T 0009-2012 SM2 Cryptography Algorithm Application Specification (English Translation)
+= GM/T 0009-2012 SM2 Cryptography Algorithm Application Specification: English Translation
 Ronald Tse <ronald.tse@ribose.com>
-v0.1, October 10, 2017: Draft Translation
+v0.2, January 9, 2017: Added foreword and introduction
 :stem:
+
+:sectnums!:
+
+== Foreword
+
+This standard is authored in accordance with GB/T 1.1-2009.
+
+Please note that some of this document involve patents. The publishers of this
+document does not bear responsibility of identifying these patents.
+
+This standard is proposed by the State Cryptographic Administration of China.
+
+This standard is managed by the National Information Security Standardization
+Technical Committee (SAC/TC 260).
+
+Appendix A of this standard is considered normative.
+
+This standard was drafted by these organizations: 
+
+* Beijing Haitai Fangyuan Technology Co., Ltd.
+* Westone Information Industry Inc.
+* Wuxi Jiangnan Information Technology Co., Ltd., Security Engineering Technology Center
+* Xingtang Telecommunications Technology Co., Ltd
+* Shanghai Koal Software Co.
+* Shandong Dean Information Technology Co., Ltd
+
+The main drafters of this standard include: 
+
+* Liu Ping
+* Jiang Hongyu
+* Liu Zengshou
+* Li Yuanzheng
+* Xu Qiang
+* Tan Wuzheng
+* Kongfan Yu
+* Wang Nina
+
+
+== Introduction
+
+The SM2 Elliptic Curve Cryptographic Algorithm (SM2) is a set of algorithms
+approved by the State Cryptographic Administration. It includes the SM2-1
+Elliptic Curve Digital Signature Algorithm, the SM2-2 Elliptic Curve Key
+Exchange Protocol, and the SM2-3 Elliptic Curve Public-Key Encryption
+algorithm.
+
+The purpose of this standard is to ensure correctness of the usage of the SM2
+cryptographic algorithms, through the standardization of a uniform data format
+and method of use.
+
+The SM3 algorithm specified in this standard refers to the SM3 Cryptographic
+Hash Algorithm approved by the State Cryptographic Administration.
+
+This standard is intended to only provide instructions on the application of
+the SM2 crypgoraphic algorithms, and does not provide details on their actual
+calculations.
+
+:sectnums:
 
 == Scope
 
@@ -20,8 +78,8 @@ referenced documents that are dated, only the dated document applies to this
 document. For referenced documents that are undated, the latest version
 (including all errata) applies to this document.
 
-* GB/T AAAA, SM2 Elliptic Curve Cryptography Public Key Algorithm
-* GB/T BBBB, SM3 Cryptographic Hash Algorithm
+* GB/T 32918 (all parts), SM2 Elliptic Curve Cryptography Public Key Algorithm
+* GB/T 32905:2016, SM3 Cryptographic Hash Algorithm
 
 
 == Terms And Definitions

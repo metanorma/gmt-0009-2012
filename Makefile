@@ -1,4 +1,5 @@
-SRC  := $(wildcard *.adoc)
+#SRC  := $(wildcard *.adoc)
+SRC  := main.adoc
 HTML := $(patsubst %.adoc,%.html,$(SRC))
 PDF  := $(patsubst %.adoc,%.pdf,$(SRC))
 
