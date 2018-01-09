@@ -1,9 +1,10 @@
-#SRC  := $(wildcard *.adoc)
-SRC  := main.adoc
-HTML := $(patsubst %.adoc,%.html,$(SRC))
-PDF  := $(patsubst %.adoc,%.pdf,$(SRC))
-
 SHELL := /bin/bash
+
+OUTDIR := docs
+ADOC = ./index.adoc
+HTML := $(patsubst ./%.adoc, docs/%.html, $(ADOC))
+PDF := $(patsubst ./%.adoc, docs/%.pdf, $(ADOC))
+
 APDF_OPTS := asciidoctor-pdf -r asciidoctor-mathematical
 
 all: $(HTML) $(PDF)
@@ -11,12 +12,18 @@ all: $(HTML) $(PDF)
 clean:
 	rm -f $(HTML) $(PDF)
 
-%.html: %.adoc
-	bundle exec asciidoctor -b html5 $^ --trace > $@
+$(OUTDIR)/%.html: %.adoc $(OUTDIR)
+	bundle exec asciidoctor -b html5 $< -D $(OUTDIR) --trace 
 
-%.pdf: %.adoc
-	bundle exec ${APDF_OPTS} $^ --trace > $@
+$(OUTDIR)/%.pdf: %.adoc $(OUTDIR)
+	bundle exec ${APDF_OPTS} $< -D $(OUTDIR) --trace
 
 open:
 	open *.html
 
+$(OUTDIR): empty
+	mkdir -p $(OUTDIR)
+
+empty: ;
+
+.PHONY: all clean open
