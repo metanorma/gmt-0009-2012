@@ -1,4 +1,4 @@
-= GM/T 0009:2012 SM2 Cryptographic Algorithm Application Specification: English Translation
+= GM/T 0009-2012 SM2 Cryptographic Algorithm Application Specification: English Translation
 Ronald Tse <ronald.tse@ribose.com>
 v0.2, January 9, 2017: Added foreword and introduction
 :stem:
