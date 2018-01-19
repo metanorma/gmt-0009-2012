@@ -10,14 +10,14 @@ v0.2, January 9, 2017: Added foreword and introduction
 This standard is authored in accordance with GB/T 1.1-2009.
 
 Please note that some of this document involve patents. The publishers of this
-document does not bear responsibility of identifying these patents.
+document do not bear responsibility of identifying these patents.
 
 This standard is proposed by the State Cryptographic Administration of China.
 
 This standard is managed by the National Information Security Standardization
 Technical Committee (SAC/TC 260).
 
-This standard was drafted by these organizations: 
+This standard was drafted by these organizations:
 
 * Beijing Haitai Fangyuan Technology Co., Ltd.
 * Westone Information Industry Inc.
@@ -26,7 +26,7 @@ This standard was drafted by these organizations:
 * Shanghai Koal Software Co.
 * Shandong Dean Information Technology Co., Ltd
 
-The main drafters of this standard include: 
+The main drafters of this standard include:
 
 * Liu Ping
 * Jiang Hongyu
@@ -54,7 +54,7 @@ The SM3 algorithm specified in this standard refers to the SM3 Cryptographic
 Hash Algorithm approved by the State Cryptographic Administration.
 
 This standard is intended to only provide instructions on the application of
-the SM2 crypgoraphic algorithms, and does not provide details on their actual
+the SM2 cryptographic algorithms, and does not provide details on their actual
 calculations.
 
 :sectnums:
@@ -86,7 +86,7 @@ algorithm identifier::
   used to identify the algorithm that generated a digital message
 
 SM2 algorithm::
-  an elliptic curve cryptographic algorithm, with a 256 bit long secret key.
+  an elliptic curve cryptographic algorithm, with a 256-bit long secret key.
 
 SM3 algorithm::
   a hash algorithm with an output length of 256 bits.
