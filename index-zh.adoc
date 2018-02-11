@@ -1,0 +1,1033 @@
+= GM/T 0009-2012 SM2 Cryptographic Algorithm Application Specification
+Ronald Tse <ronald.tse@ribose.com>
+v0.1, February 9, 2018: Initial Import
+:title-zh: SM2密码算法使用规范
+:title-en: SM2 cryptography algorithm application specification
+:gb-standard-type: industry
+:gb-standard-series: GM
+:gb-standard-mandate: recommended
+:gb-standard-code: 0009
+:gb-standard-edition: 2012
+:gb-standard-published: 2012-11-22
+:gb-standard-active: 2012-11-22
+:gb-standard-publisher-zh: 国家密码管理局
+:gb-standard-publisher-en: State Administration of Cryptography
+:gb-standard-proposer-zh: 国家密码管理局
+:gb-standard-proposer-en: State Administration of Cryptography
+:gb-standard-technical-committee-zh: 全国信息安全标准计算委员会（SAC/TC260）
+:gb-standard-technical-committee-en: National Information Security Standardization Technical Committee (SAC/TC260)
+:stem:
+
+:sectnums!:
+
+== 前言
+// Introduction
+
+本标准按照GB/T 1.1 2009的规则编写。
+//This standard is authored in accordance with GB/T 1.1-2009.
+
+本标准由{gb-standard-proposer-zh}提出。
+//This standard is proposed by the State Cryptographic Administration of China.
+
+本标准由{gb-standard-technical-committee-zh}归口。
+//This standard is managed by the National Information Security Standardization
+//Technical Committee (SAC/TC 260).
+
+请注意本文件的某些内容可能涉及专利。本文件的发布机构不承担识别这些专利的责任。
+//Please note that some of this document involve patents. The publishers of this
+//document do not bear responsibility of identifying these patents.
+
+// XXX: Did not add the drafters orgs to metadata since it's not yet ready.
+本标准起草单位：北京海泰方圆科技有限公司、卫士通信息产业股份有限公司、
+无锡江南信息安全工程技术中心、兴唐通信科技股份有限公司、
+山东得安信息技术有限公司、上海格尔软件股份有限公司。
+
+////
+This standard was drafted by these organizations:
+
+* Beijing Haitai Fangyuan Technology Co., Ltd.
+* Westone Information Industry Inc.
+* Wuxi Jiangnan Information Technology Co., Ltd., Security Engineering Technology Center
+* Xingtang Telecommunications Technology Co., Ltd
+* Shanghai Koal Software Co.
+* Shandong Dean Information Technology Co., Ltd
+////
+
+
+// XXX: Did not add the drafters persons to metadata since it's not yet ready.
+本标准主要起草人：刘平、蒋红宇、柳增寿、李元正、徐强、谭武征、孔凡玉、王妮娜。
+////
+The main drafters of this standard include:
+
+* Liu Ping
+* Jiang Hongyu
+* Liu Zengshou
+* Li Yuanzheng
+* Xu Qiang
+* Tan Wuzheng
+* Kongfan Yu
+* Wang Nina
+////
+
+
+== 引言
+//== Introduction
+
+SM2椭圆曲线密码算法（以下简称SM2）是国家密码管理局批准的一组算法，
+其中包括SM2-1椭圆曲线数字签名算法、SM2-2椭圆曲线密钥协商协议，
+SM2-3椭圆曲线加密算法。
+
+////
+The SM2 Elliptic Curve Cryptographic Algorithm (SM2) is a set of algorithms
+approved by the State Cryptographic Administration. It includes the SM2-1
+Elliptic Curve Digital Signature Algorithm, the SM2-2 Elliptic Curve Key
+Exchange Protocol, and the SM2-3 Elliptic Curve Public-Key Encryption
+algorithm.
+////
+
+本标准的目标是保证SM2使用的正确性，为SM2密码算法的使用制定统一的数据格式和使用方法。
+
+////
+The purpose of this standard is to ensure correctness of the usage of the SM2
+cryptographic algorithms, through the standardization of a uniform data format
+and method of use.
+////
+
+本标准中涉及的SM3算法是指国家密码管理局批准的SM3密码杂凑算法。
+////
+The SM3 algorithm specified in this standard refers to the SM3 Cryptographic
+Hash Algorithm approved by the State Cryptographic Administration.
+////
+
+本标准仅从算法应用的角度给出SM2密码算法的使用说明，
+不涉及SM2密码算法的具体编制细节。
+////
+This standard is intended to only provide instructions on the application of
+the SM2 cryptographic algorithms, and does not provide details on their actual
+calculations.
+////
+
+:sectnums:
+
+== 范围
+//== Scope
+
+本标准定义了SM2密码算法的使用方法，以及密钥、加密与签名等的数据格式。
+////
+This standard defines the usage methods of the SM2 cryptographic algorithm, as
+well as data formats for secret key, encryption and signature data.
+////
+
+本标准适用于SM2密码算法的使用，以及支持SM2密码算法的设备和系统的研发和检测。
+////
+This standard is applicable to the usage of the SM2 cryptographic algorithm,
+and to the development and testing of devices and systems that support the
+SM2 cryptographic algorithm.
+////
+
+
+== 规范性引用文件
+//== Normative References
+
+下列文件对于本文件的应用是必不可少的。凡是注日期的引用文件，
+仅注日期的版本适用于本文件。凡是不注日期的引用文件，
+其最新版本（包括所有的修改单）适用于本文件。
+
+////
+The following documents are necessary for the application of this document. For
+referenced documents that are dated, only the dated document applies to this
+document. For referenced documents that are undated, the latest version
+(including all errata) applies to this document.
+////
+
+* GM/T 0003 (所有部分) SM2椭圆曲线公钥密码算法
+* GM/T 0004 SM3密码杂凑算法
+
+////
+* GM/T 0003 (all parts) SM2 Elliptic Curve Cryptography Public Key Algorithm
+* GM/T 0004 SM3 Cryptographic Hash Algorithm
+////
+
+
+== 术语和定义
+//== Terms And Definitions
+
+下列术语和定义适用于本文件。
+//The following terms and definitions apply to this document.
+
+=== 算法标识
+[td-en]#algorithm identifier#
+
+用于标明算法机制的数字化信息
+
+////
+algorithm identifier::
+  used to identify the algorithm that generated a digital message
+////
+
+=== SM2密码算法
+[td-en]#SM2 algorithm#
+
+一种椭圆曲线密码算法，密钥长度为256比特。
+
+////
+SM2 algorithm::
+  an elliptic curve cryptographic algorithm, with a 256-bit long secret key.
+////
+
+=== SM3算法
+[td-en]#SM3 algorithm#
+
+一种杂凑算法，输出长度为256比特。
+
+////
+SM3 algorithm::
+  a hash algorithm with an output length of 256 bits.
+////
+
+
+== Symbols And Abbreviations
+
+符号和缩略语
+
+下列缩略语适用于本文件：
+
+EC::
+  电码本模式（Electronics Code Book）
+
+ECC::
+  椭圆曲线密码算法（Elliptic Curve Cryptography）
+
+ID::
+  用户身份标识（Identity）
+
+
+////
+The following abbreviations are applicable to this document:
+
+EC::
+  Electronic Code Book mode
+
+ECC::
+  Elliptic Curve Cryptography
+
+ID::
+  User identification
+
+////
+
+== SM2的密钥对
+//== SM2 Key Pairs
+
+=== SM2私钥
+
+SM2私钥是一个大于等于 `1` 且小于 `n-1` 的整数（ `n` 为SM2算法的阶，其值参见
+GM/T 0003），简记为 `k` ，长度为256位。
+
+////
+=== SM2 Private Key
+
+The SM2 Private Key is a whole number larger than `1` but less than `(n-1)` (`n` is
+the number of rounds of the SM2 algorithm, refer to GM/T 0003 for its
+value).  It is abbreviated as `k`, with a length of 256 bits.
+////
+
+=== SM2公钥
+
+SM2公钥是SM2曲线上的一个点，由横坐标和纵坐标两个分量来表示，记为 `（x，y）`，
+简记为 `Q` ，每个分量的长度为256位。
+
+
+////
+=== SM2 Public Key
+
+The SM2 Public Key is a point on the SM2 Curve, represented by its x- and
+y-coordinates as `(x, y)`, abbreviated as `Q`, with each coordinate of length
+256 bits.
+////
+
+
+== 数据转换
+//== Data Conversion
+
+在SM2算法的使用中将涉及8位字节串(Octet String)和位串(Bit String)之间的转换，
+主要包括以下四种形式。
+
+////
+In SM2 calculations these 4 mechanisms are used to convert between Octet
+Strings and Bit Strings.
+////
+
+
+=== 位串到8位字节串的转换
+//=== Bit String to Octet String Conversion
+
+位串长度若不是8的整数倍，需先在它的左边补 `0` ，以保证它的长度为8的倍数，
+然后构造8位字节串，转换过程如下：
+//If the bit string length is not a multiple of 8, add `0` to its left to ensure
+//the length is divisible by 8. Then create an octet string as below.
+
+输入: 一个长度为stem:[b l e n]的位串stem:[B]。
+//INPUT: Bit String stem:[B] of length stem:[b l e n]
+
+输出: 一个长度为stem:[m l e n]的字节串M，其中stem:[m l e n]的取值为
+stem:[(b l e n + 7)/8]的整数部分。
+//OUTPUT: Octet String stem:[M] of length stem:[m l e n], stem:[m l e n] is the
+//whole number portion of stem:[(b l e n + 7)/8].
+
+动作：将位串 stem:[B = B_0 B_1 ... B_{b l e n - 1}] 转换到8位字节串
+stem:[M = M_0 M_1 ... M_{m l e n - 1}] 采用如下方法：
+//STEPS: Converting bit string stem:[B = B_0 B_1 ... B_{b l e n - 1}] to octet
+//string stem:[M = M_0 M_1 ... M_{m l e n - 1}]:
+
+从 stem:[0 <= i <= m l e n - 1] ，设置：
+//From stem:[0 <= i <= m l e n - 1], set:
+
+[stem]
+++++
+M_i = B_{b l e n-8-8(m l e n-1-i)} B_{b l e n-7-8(m l e n-1-i)} ... B_{b l e n-1-8(m l e n-1-i)}
+++++
+
+对于 stem:[M_0]，最左边stem:[8 - b l e n % 8] 位设置为0，右边设置为 
+stem:[B_0 B_1 … B_(8 - 8(m l e n) + b l e n - 1)]。
+//For stem:[M_0], the leftmost stem:[8 - b l e n % 8] position should be set to
+//stem:[0], the right of it is stem:[B_0 B_1 … B_(8 - 8(m l e n) + b l e n - 1)]
+
+输出M。
+//OUTPUT stem:[M].
+
+
+=== 8位字节串到位串的转换
+//=== Octet String to Bit String Conversion
+
+8位字节串到位串转换过程如下：
+//Octet String to Bit String Conversion as follows:
+
+输入: 一个长度为stem:[m l e n]的8位字节串stem:[M]。
+//INPUT: Octet String stem:[M] of length stem:[m l e n]
+
+输出: 一个长度为stem:[b l e n = (8 times m l e n)]的位串stem:[B]。
+//OUTPUT: Octet String stem:[B] of length stem:[b l e n = (8 times m l e n)]
+
+动作：将8位字节串 stem:[M = M_0 M_1 … M_(m l e n-1)] 转换到位串
+stem:[B = B_0 B_1 … B_(b l e n-1)] 采用如下方法：
+//STEPS: Converting octet string stem:[M = M_0 M_1 … M_(m l e n-1)] to bit string
+//stem:[B = B_0 B_1 … B_(b l e n-1)]
+
+从stem:[0 <= i <= m l e n-1]，设置： 
+//From stem:[0 <= i <= m l e n-1], set:
+
+[stem]
+++++
+B_(8i) B_(8i+1) … B_(8i+7) = M_i
+++++
+
+输出B。
+//OUTPUT stem:[B].
+
+
+=== 整数到8位字节串的转换
+//=== Integer to Octet String Conversion
+
+一个整数转换为8位字节串，基本方法是将其先使用二进制表达，
+然后把结果位串再转换为8位字节串。以下是转换流程：
+//Converting an integer into an octet string, the basic method is to first
+//represent the integer in binary, and the output the bit string as an octet
+//string. This is the conversion flow:
+
+输入: 一个非负整数stem:[x]，期望的8位字节串长度stem:[m l e n]。基本限制为：
+stem:[2^(8 (m l e n)) > x]
+
+//INPUT: A non-negative stem:[x]; expected octet string length stem:[m l e n].
+//Where stem:[2^(8 (m l e n)) > x]
+
+输出: 一个长度为stem:[m l e n]的8位字节串stem:[M]。
+//OUTPUT: Octet string stem:[M] of length stem:[m l e n]
+
+动作: 将基于stem:[2^8 = 256] 的stem:[x] 值
+stem:[x =
+x_{m l e n-1}2^(8(m l e n-1)) +
+x_{m l e n-2}2^(8(m l e n-2)) +
+... x_{1}2^8 + x_0]
+转换为一个8位字节串
+stem:[M = M_{0}M_{1} … M_{m l e n-1}]采用如下方法：
+
+////
+STEPS: Convert a number stem:[x] based on stem:[2^8 = 256],
+stem:[x =
+x_{m l e n-1}2^(8(m l e n-1)) +
+x_{m l e n-2}2^(8(m l e n-2)) +
+... x_{1}2^8 + x_0] into stem:[M = M_{0}M_{1} … M_{m l e n-1}]
+requires the following method:
+////
+
+从stem:[0 <= i <= m l e n–1]，设置：
+//Given stem:[0 <= i <= m l e n–1], set:
+
+[stem]
+++++
+M_{i} = x_{m l e n-1-i}
+++++
+
+输出stem:[M]。
+//OUTPUT: stem:[M]
+
+
+=== 8位字节串到整数的转换
+//=== Octet String to Whole Number Conversion
+
+可以简单地把8位字节串看成以256为基表示的整数，转换过程如下：
+//It is simple to convert an Octet String into a Base 256 whole number.
+//Conversion method below:
+
+输入：一个长度stem:[m l e n]的8位字节串stem:[M]。
+//INPUT: Octet String stem:[M] of length stem:[m l e n]
+
+输出：一个整数x。
+//OUTPUT: Whole number stem:[x]
+
+动作：将一个8位字节串stem:[M = M_0 M_1 … M_{m l e n-1}]
+转换为整数stem:[x]方法如下：
+//STEPS: Convert stem:[M = M_0 M_1 … M_{m l e n-1}] into whole number stem:[x]
+//according to the following actions:
+
+将stem:[M_i] 看作stem:[[0~255]]中的一个整数
+//stem:[M_i] is like a whole number within stem:[[0~255]]
+　　　　 
+[stem]
+++++
+x = sum_{i=0}^{m l e n-1} 2^{8(m l e n-1-i)} M_i
+++++
+
+输出stem:[x]。
+//Output stem:[x].
+
+
+== 数据格式
+//== Data Format
+
+=== 密钥数据格式
+//=== Secret Key Data Format
+
+SM2算法私钥数据格式的ASN.1定义为：
+//SM2 secret key data format as described in ASN.1 is:
+
+[source]
+----
+SM2PrivateKey ::= INTEGER
+----
+
+SM2算法公钥数据格式的ASN.1定义为：
+//SM2 public key data format as described in ASN.1 is:
+
+[source]
+----
+SM2PublicKey ::= BIT STRING
+----
+
+`SM2PublicKey` 为 `BIT STRING` 类型，内容为 `04 | X | Y`，
+其中， `X` 和 `Y` 分别标识公钥的 `x` 分量和 `y` 分量，
+其长度各为256位。
+//`SM2PublicKey` is of type `BIT STRING`, content is `04 | X | Y`, within that,
+//`X` and `Y` specifies the x- and y-coordinates of the public key, each of
+//256-bits long.
+
+=== 加密数据格式
+//=== Encrypted Data Format
+
+SM2算法加密后的数据格式的ASN.1定义为：
+//SM2 encrypted data format as described in ASN.1 is:
+
+[source]
+----
+SM2Cipher ::= SEQENCE{
+  XCoordinate     INTEGER,                -- x 分量
+  YCoordinate     INTEGER,                -- y 分量
+  HASH            OCTET STRING SIZE(32),  -- 杂凑值
+  CipherText      OCTET STRING            -- 密文
+}
+----
+
+////
+[source]
+----
+SM2Cipher ::= SEQENCE{
+  XCoordinate     INTEGER,                -- x-coordinate
+  YCoordinate     INTEGER,                -- y-coordinate
+  HASH            OCTET STRING SIZE(32),  -- hash value
+  CipherText      OCTET STRING            -- ciphertext
+}
+----
+////
+
+其中，`HASH`为使用SM3算法对明文数据运算得到的杂凑值，其长度固定为256位。
+`CipherText`是与明文等长的密文。
+
+//`HASH` is the hash value calculated from SM3, with a fixed bit length of
+//256-bits. `CipherText` is of same length as its plaintext.
+
+=== 签名数据格式
+//=== Signature Data Format
+
+SM2算法签名数据格式的ASN.1定义为：
+//SM2 signature data format as described in ASN.1 is:
+
+[source]
+----
+SM2Signature ::= SEQUENCE{
+  R   INTEGER,  -- 签名值的第一部分
+  S   INTEGER   -- 签名值的第二部分
+}
+----
+
+////
+[source]
+----
+SM2Signature ::= SEQUENCE{
+  R   INTEGER,  -- first portion of signature
+  S   INTEGER   -- second portion of signature
+}
+----
+////
+
+`R` 和 `S` 的长度各为256位。
+//`R` and `S` are of 256 bits long.
+
+
+=== 密钥对保护数据格式
+//=== Enveloped Secret Key Data Format
+
+在SM2密钥对传递时，需要对SM2密钥对进行加密保护。具体的保护方法为：
+//When transferring a SM2 secret key, the SM2 secret key should be encrypted. The
+//encryption method is:
+
+. 产生一个对称密钥；
+
+. 按对称密码算法标识指定的算法对SM2私钥进行加密，得到私钥的密文。
+  若对称算法为分组算法，则其运算模式为ECB；
+
+. 使用外部SM2公钥加密对称密钥得到对称密钥密文；
+
+. 将私钥密文、对称密钥密文封装到密钥对保护数据中。
+
+////
+. Create a symmetric secret key;
+
+. According to the necessary calculation methods, encrypt the SM2 private key
+  to obtain the private key's ciphertext. If the symmetric encryption method is a
+  block cipher, utilize ECB mode;
+
+. Utilize SM2 public key to encrypt the symmetric secret key to obtain
+  symmetric secret key ciphertext;
+
+. Put the SM2 private key ciphertext, symmetric secret key ciphertext into an
+  Enveloped Key Data Format.
+////
+
+
+SM2密钥对的保护数据格式的ASN.1定义为：
+//SM2 Enveloped Secret Key data format as described in ASN.1 is:
+
+[source]
+----
+SM2EnvelopedKey ::=  SEQUENCE{
+  symAlgID                AlgorithmIdentifier,  -- 对称密码算法标识
+  symEncryptedKey         SM2Cipher,            -- 对称密钥密文
+  Sm2PublicKey            SM2PublicKey,         -- SM2公钥
+  Sm2EncryptedPrivateKey  BIT STRING            -- SM2私钥密文
+}
+----
+
+////
+[source]
+----
+SM2EnvelopedKey ::=  SEQUENCE{
+  symAlgID                AlgorithmIdentifier,  -- Symmetric Encryption Algorithm ID
+  symEncryptedKey         SM2Cipher,            -- Symmetric Encryption Key encrypted by SM2 Public Key
+  Sm2PublicKey            SM2PublicKey,         -- SM2 Public Key
+  Sm2EncryptedPrivateKey  BIT STRING            -- SM2 Private Key Encrypted by Symmetric Encryption
+}
+----
+////
+
+== 预处理
+//== Pre-processing
+
+=== 预处理1
+//=== Pre-processing 1
+
+预处理1是指使用签名方的用户身份标识和签名方公钥，通过运算得到 `Z` 值的过程。
+`Z` 值用于预处理2，也用于SM2密钥协商协议。
+//Pre-processing 1 is to use the signing party's identifier and signature public
+//key, to calculate value `Z`.
+//`Z` is used in pre-processing 2, which is the SM2 key negotiation.
+
+输入:	
+
+* `ID` ： 字节串。 用户身份标识。
+* `Q` ： `SM2PublicKey` 。用户的公钥。
+
+////
+INPUT:
+
+* `ID`: Byte String. User Identifier.
+* `Q`: `SM2PublicKey`. User Public Key.
+////
+
+输出:	
+
+* `Z`: 字节串。 预处理1的输出。
+
+////
+OUTPUT:
+
+* `Z`: Byte String. Output of Pre-processing 1.
+////
+
+计算公式为：
+//Formula is:
+
+[source]
+----
+Z = SM3(ENTL|ID|a|b|xG|yG|xA|yA)
+----
+
+其中：
+
+* `ENTL` 为由2个字节表示的ID的比特长度；
+* `ID` 为用户身份标识；
+* `a`, `b` 为系统曲线参数；
+* `xG`, `yG` 为基点；
+* `xA`, `yA` 为用户的公钥。
+
+////
+Where:
+
+* `ENTL` is a 2 byte field indicating bit-length of ID;
+* `ID` is the User Identifier;
+* `a`, `b` is the System Curve Parameter;
+* `xG`, `yG` are the base points;
+* `xA`, `yA` represents the User's Public Key.
+////
+
+详细的计算过程参见GM/T 0003和GM/T 0004。
+//For detailed calculations see GM/T 0003 and GM/T 0004.
+
+
+=== 预处理2
+//=== Pre-processing 2
+
+预处理2是指使用 `Z` 值和待签名消息，通过SM3运算得到杂凑值 `H` 的过程。
+杂凑值 `H` 用于SM2数字签名。
+
+//Pre-processing 2 is the process of using value `Z` and the message to be
+//signed, utilize SM3 to calculate hash value `H`. 
+//Hash value `H` is used for the calculation of SM2 digital signatures.
+
+输入:
+
+* `Z`: 字节串。预处理2的输入。
+* `M`: 字节串。待签名消息。
+
+////
+INPUT:
+
+* `Z`: Byte String. Input to Pre-processing 2.
+* `M`: Byte String. Message to be signed.
+////
+
+输出:
+
+* `H`: 字节串。杂凑值。
+
+////
+OUTPUT:
+
+* `H`: Byte String. Hash Value.
+////
+
+计算公式为：
+//Calculation:
+
+[source]
+----
+H = SM3(Z|M)
+----
+
+详细的计算过程参见GM/T 0003和GM/T 0004。
+//For detailed calculations see GM/T 0003 and GM/T 0004.
+
+
+== 计算过程
+//== Calculation Process
+
+=== 生成密钥
+//=== Generation of Secret Key
+
+SM2密钥生成是指生成SM2算法的密钥对的过程，该密钥对包括私钥和与之对应的公钥。
+其中，私钥的长度为256位，公钥的长度为512位。
+//SM2 secret key generation is the process of using SM2 calculations to create a
+//pair of keys, this pair of keys include a private key and the corresponding
+//public key. The private key is of 256-bits long and the public key 512-bits
+//long.
+
+输入:
+
+* 无
+
+////
+INPUT:
+
+* None
+////
+
+输出:
+
+* `k`: `SM2PrivateKey` 。 SM2私钥。
+* `Q`: `SM2PublicKey` 。 SM2公钥。
+
+////
+OUTPUT:
+
+* `k`: `SM2PrivateKey`. SM2 Private Key.
+* `Q`: `SM2PublicKey`. SM2 Public Key.
+////
+
+详细的计算过程参见GM/T 0003。
+//For detailed calculations see GM/T 0003.
+
+
+
+=== 加密
+//=== Encryption
+
+SM2加密是指使用指定公开密钥对明文进行特定的加密计算，生成相应密文的过程。
+该密文只能由该指定公开密钥对应的私钥解密。
+//SM2 Encryption is to use the public key of the given key pair to perform
+//encryption, in order to generate ciphertext. This ciphertext can only be
+//decrypted by the corresponding private key.
+
+输入:
+
+* `Q`: `SM2PublicKey`。 SM2公钥。
+* `m`: Byte 字节串。 待加密的明文数据。
+
+////
+INPUT:
+
+* `Q`: `SM2PublicKey`. SM2 Public Key.
+* `m`: Byte String. Plaintext To Be Encrypted.
+////
+
+输出:
+
+* `c`: `SM2Cipher`. 密文.
+
+////
+OUTPUT:
+
+* `c`: `SM2Cipher`. Ciphertext.
+////
+
+其中：
+
+* 输出参数 `c` 的格式由本规范7.2中定义；
+* 输出参数 `c` 的 `XCoordinate` 、 `YCoordinate` 为随机产生的公钥的x分量和y分量；
+* 输出参数 `c` 中的 `HASH` 的计算公式为：
+  `HASH = SM3( x | m | y )`
+  其中，x，y为Q的x分量和y分量；
+
+////
+Where:
+
+* Output `c` is in the format defined by Section 7.2;
+* Output `c`'s `XCoordinate`, `YCoordinate` are randomly generated x- and y-coordinates;
+* Output `c`'s `HASH` was calculated as `HASH = SM3( x | m | y )`, where `x`, `y` are
+  `Q`'s x- and y-coordinates;
+////
+
+输出参数 `c` 中 `CipherText` 为加密密文，其长度等于明文的长度。
+//Output `c`'s `CipherText` is the ciphertext, its length is identical to that of
+//the plaintext.
+
+详细的计算过程参见GM/T 0003和GM/T 0004。
+//For detailed calculations see GM/T 0003 and GM/T 0004.
+
+
+=== 解密
+//=== Decryption
+
+SM2解密是指使用指定私钥对密文进行解密计算，还原对应明文的过程。
+//SM2 Decryption means using a private key to decrypt a ciphertext encrypted by
+//the corresponding public key to obtain the plaintext.
+
+
+输入:
+
+* `d`: `SM2PrivateKey`。 SM2私钥。
+* `c`: `SM2Cipher`。 密文。
+
+////
+INPUT:
+
+* `d`: `SM2PrivateKey`. SM2 private key.
+* `c`: `SM2Cipher`. Ciphertext.
+////
+
+输出:
+
+* `m`: 字节串。 与密文对应的明文。
+
+////
+OUTPUT:
+
+* `m`: Byte String. Corresponding plaintext to ciphertext.
+////
+
+`m` 为 `SM2Cipher` 经过解密运算得到的明文，
+该明文的长度与输入参数 `c` 中 `CipherText` 的长度相同。
+//`m` is the decrypted plaintext of `SM2Cipher`, the length of plaintext is
+//the same as that of the input `CipherText` of `c`.
+
+详细的计算过程参见GM/T 0003。
+//For detailed calculations see GM/T 0003.
+
+
+=== 数字签名
+//=== Digital Signature
+
+SM2签名是指使用预处理2的结果和签名者私钥，通过签名计算得到签名结果的过程。
+//SM2 signature is to obtain a signature by using the result of pre-processing
+//2's together with the signer's private key through the signing process.
+
+输入:
+
+* `d`: `SM2PrivateKey`。 签名者私钥。
+* `H`: 字节串。 预处理2的结果。
+
+INPUT:
+
+* `d`: `SM2PrivateKey`. Signer's Private Key.
+* `H`: Byte String. Result of Pre-processing 2.
+
+输出:
+
+* `sign`: `SM2Signature`。 签名值。
+
+OUTPUT:
+
+* `sign`: `SM2Signature`. Signature value.
+
+详细的计算过程参见 GM/T 0003。
+//For detailed calculations see GM/T 0003.
+
+
+=== 签名验证
+//=== Signature Verification
+
+SM2签名验证是指使用预处理2的结果、签名值和签名者的公钥，
+通过验签计算确定签名是否通过验证的过程。
+//SM2 signature verification is to verify a signature through using the result of
+//pre-processing 2, the signature value and the signer's public key, through a
+//verification process.
+
+输入:
+
+* `H`. 字节串. 预处理2的结果
+* `sign`. `SM2Signature`. 签名值
+* `Q`. `PublicKey`. 签名者的公钥.
+
+////
+INPUT:
+
+* `H`. Byte String. Result of Pre-processing 2
+* `sign`. `SM2Signature`. Signature value
+* `Q`. `PublicKey`. Signer's Public Key.
+////
+
+输出:
+
+* 为 `真` 表示"`验证通过`"，为 `假` 表示"`验证不通过`"。
+
+////
+OUTPUT:
+
+* `true` if "`validation passed`", `false` if "`validation failed`".
+////
+
+详细的计算过程参见 GB/T 0003
+//For detailed calculations see GM/T 0003.
+
+
+=== 密钥协商
+//=== Secret Key Negotiation
+
+密钥协商是在两个用户之间建立一个共享秘密密钥的协商过程，
+通过这种方式能够确定一个共享秘密密钥的值。
+////
+Secret key negotiation is the negotiation process between two users for the
+setup of a shared secret key.
+////
+
+设密钥协商双方为stem:[A]、stem:[B]，其密钥对分别为
+stem:[(d_A, Q_A)]和stem:[(d_B, Q_B)]，
+双方需要获得的密钥数据的比特长度为stem:[k l e n]。
+密钥协商协议分为两个阶段。
+
+////
+Assume the parties of negotiation are stem:[A] and stem:[B], their secret key
+pairs are stem:[(d_A, Q_A)] and stem:[(d_B, Q_B)], both parties need to receive
+a secret key data of stem:[k l e n] bits long.
+Secret key negotiation is split into two stages.
+////
+
+第一阶段：产生临时密钥对
+//Stage 1: Create A Temporary Secret Key Pair
+
+用户stem:[A]：
+
+* 调用生成密钥算法产生临时密钥对stem:[(r_A, R_A)]，将stem:[R_A]和用户stem:[A]
+  的用户身份标识stem:[ID_A]发送给用户stem:[B]。
+
+////
+User stem:[A]:
+
+* Utilize the secret key generation algorithm to create temporary key pair stem:[(r_A, R_A)],
+  send stem:[R_A] and user stem:[A]'s user identifier stem:[ID_A] to user stem:[B].
+////
+
+用户stem:[B]：
+
+* 调用生成密钥算法产生临时密钥对stem:[(r_B, R_B)]，将stem:[R_B]和
+  用户stem:[B]的用户身份标识stem:[ID_B]发送给用户stem:[A]。
+
+////
+User stem:[B]:
+
+* Utilize the secret key generation algorithm to create temporary key pair stem:[(r_B, R_B)],
+send stem:[R_B] and user stem:[B]'s user identifier stem:[ID_B] to user stem:[A].
+////
+
+
+第二阶段：计算共享秘密密钥
+//Stage 2: Calculate The Shared Secret Key
+
+用户stem:[A]：
+//User stem:[A]:
+
+* 输入参数：
+
+** stem:[Q_A]: `SM2PublicKey`。 用户 stem:[A] 的公钥
+** stem:[Q_B]: `SM2PublicKey`。 用户 stem:[B] 的公钥
+** stem:[R_A]: `SM2PublicKey`。 用户 stem:[A] 的临时公钥
+** stem:[ID_A]: `OCTET STRING`。 用户 stem:[A] 的用户身份标识
+** stem:[R_B]: `SM2PublicKey`。 用户 stem:[B] 的临时公钥
+** stem:[ID_B]: `OCTET STRING`。 用户 stem:[A] 的用户身份标识
+** stem:[d_A]: `SM2PrivateKey`。 用户 stem:[A] 的私钥
+** stem:[r_A]: `SM2PrivateKey`。 用户 stem:[A] 的临时私钥
+** stem:[k l e n]: `INTEGER`。 需要输出的密钥数据的比特长度
+
+* 输出参数：
+
+** stem:[K]: `OCTET STRING`. 位长为 stem:[k l e n] 的密钥数据
+
+* 步骤：
+
+.. 用 stem:[ID_A] 和 stem:[Q_A] 作为输入参数，调用预处理1得到 stem:[Z_A];
+.. 用 stem:[ID_B] 和 stem:[Q_B] 作为输入参数，调用预处理1得到 stem:[Z_B];
+.. 以 stem:[k l e n], stem:[Z_A], stem:[Z_B], stem:[d_A], stem:[r_A],
+  stem:[R_A], stem:[Q_B], stem:[R_B] 为输入参数，进行运算得到 stem:[K].
+
+////
+* Input Parameters:
+
+** stem:[Q_A]: `SM2PublicKey`. User stem:[A]'s public key.
+** stem:[Q_B]: `SM2PublicKey`. User stem:[B]'s public key.
+** stem:[R_A]: `SM2PublicKey`. User stem:[A]'s temporary public key.
+** stem:[ID_A]: `OCTET STRING`. User stem:[A]'s user identifier.
+** stem:[R_B]: `SM2PublicKey`. User stem:[B]'s temporary public key.
+** stem:[ID_B]: `OCTET STRING`. User stem:[A]'s user identifier.
+** stem:[d_A]: `SM2PrivateKey`. User stem:[A]'s private key.
+** stem:[r_A]: `SM2PrivateKey`. User stem:[A]'s temporary private key.
+** stem:[k l e n]: `INTEGER`. Required bit-length of shared secret key.
+
+* Output Parameters:
+
+** stem:[K]: `OCTET STRING`. Secret key of stem:[k l e n] bits long.
+
+* Steps:
+
+.. Use stem:[ID_A] and stem:[Q_A] as input to pre-processing 1 to obtain stem:[Z_A];
+.. Use stem:[ID_B] and stem:[Q_B] as input to pre-processing 1 to obtain stem:[Z_B];
+.. Use stem:[k l e n], stem:[Z_A], stem:[Z_B], stem:[d_A], stem:[r_A],
+  stem:[R_A], stem:[Q_B], stem:[R_B] as input to calculate stem:[K].
+////
+
+
+User stem:[B]:
+
+* 输入参数：
+
+** stem:[Q_B]: `SM2PublicKey`。 用户 stem:[B] 的公钥
+** stem:[Q_A]: `SM2PublicKey`。 用户 stem:[A] 的公钥
+** stem:[R_B]: `SM2PublicKey`。 用户 stem:[B] 的临时公钥
+** stem:[ID_B]: `OCTET STRING`。 用户 stem:[A] 的用户身份标识
+** stem:[R_A]: `SM2PublicKey`。 用户 stem:[A] 的临时公钥
+** stem:[ID_A]: `OCTET STRING`。 用户 stem:[A] 的用户身份标识
+** stem:[d_B]: `SM2PrivateKey`。 用户 stem:[B] 的私钥
+** stem:[r_B]: `SM2PrivateKey`。 用户 stem:[B] 的临时私钥
+** stem:[k l e n]: `INTEGER`。 需要输出的密钥数据的比特长度
+
+* 输出参数：
+
+** stem:[K]: `OCTET STRING`. 位长为 stem:[k l e n] 的密钥数据
+
+* 步骤：
+
+.. 用 stem:[ID_A] 和 stem:[Q_A] 作为输入参数，调用预处理1得到 stem:[Z_A];
+.. 用 stem:[ID_B] 和 stem:[Q_B] 作为输入参数，调用预处理1得到 stem:[Z_B];
+.. 以 stem:[k l e n], stem:[Z_A], stem:[Z_B], stem:[d_A], stem:[r_A],
+  stem:[R_A], stem:[Q_B], stem:[R_B] 为输入参数，进行运算得到 stem:[K].
+
+
+////
+* Input Parameters:
+
+** stem:[Q_B]: `SM2PublicKey`. User stem:[B]'s public key.
+** stem:[Q_A]: `SM2PublicKey`. User stem:[A]'s public key.
+** stem:[R_B]: `SM2PublicKey`. User stem:[B]'s temporary public key.
+** stem:[ID_B]: `OCTET STRING`. User stem:[A]'s user identifier.
+** stem:[R_A]: `SM2PublicKey`. User stem:[A]'s temporary public key.
+** stem:[ID_A]: `OCTET STRING`. User stem:[A]'s user identifier.
+** stem:[d_B]: `SM2PrivateKey`. User stem:[B]'s private key.
+** stem:[r_B]: `SM2PrivateKey`. User stem:[B]'s temporary private key.
+** stem:[k l e n]: `INTEGER`. Required bit-length of shared secret key.
+
+* Output Parameters:
+
+** stem:[K]: `OCTET STRING`. Secret key of stem:[k l e n] bits long.
+
+* Steps:
+
+.. Use stem:[ID_A] and stem:[Q_A] as input to pre-processing 1 to obtain stem:[Z_A];
+.. Use stem:[ID_B] and stem:[Q_B] as input to pre-processing 1 to obtain stem:[Z_B];
+.. Use stem:[k l e n], stem:[Z_A], stem:[Z_B], stem:[d_A], stem:[r_A],
+  stem:[R_A], stem:[Q_B], stem:[R_B] as input to calculate stem:[K].
+////
+
+详细的计算过程参见GM/T 0003和GM/T 0004。
+//For detailed calculations see GM/T 0003 and GM/T 0004.
+
+== 用户身份标识 `ID` 的默认值
+//== Default Value For User Identifier `ID`
+
+无特殊约定的情况下，用户身份标识ID的长度为16字节，其默认值从左至右依次为：
+//Without pre-agreement, the user identifier `ID` should have length of 16 bytes,
+//with the default value from left to right as the following
+//(the ASCII hexadecimal representation of string `1234567812345678`):
+
+[source]
+----
+0x31 0x32 0x33 0x34 0x35 0x36 0x37 0x38 0x31 0x32 0x33 0x34 0x35 0x36 0x37 0x38
+----
+
