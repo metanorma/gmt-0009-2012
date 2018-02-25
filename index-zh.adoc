@@ -1,27 +1,32 @@
 = GM/T 0009-2012 SM2 Cryptographic Algorithm Application Specification
 Ronald Tse <ronald.tse@ribose.com>
 v0.1, February 9, 2018: Initial Import
-:title-zh: SM2密码算法使用规范
-:title-en: SM2 cryptography algorithm application specification
-:gb-standard-type: industry
-:gb-standard-series: GM
-:gb-standard-mandate: recommended
-:gb-standard-code: 0009
-:gb-standard-edition: 2012
-:gb-standard-published: 2012-11-22
-:gb-standard-active: 2012-11-22
+:docnumber: 0009
+:edition: 1
+:revdate: 2012-11-22
+:copyright-year: 2012
+:language: zh
+:title-intro-zh: SM2密码算法使用规范
+:title-intro-en: SM2 cryptography algorithm application specification
+:published-date: 2012-11-22
+:activated-date: 2012-11-22
+:technical-committee-number: 260
+:technical-committee-type: technical
+:technical-committee: National Information Security Standardization Technical Committee (SAC/TC260)
+:technical-committee-zh: 全国信息安全标准计算委员会（SAC/TC260）
+:scope: sector
+:prefix: GM
+:mandate: recommended
 :gb-standard-publisher-zh: 国家密码管理局
 :gb-standard-publisher-en: State Administration of Cryptography
 :gb-standard-proposer-zh: 国家密码管理局
 :gb-standard-proposer-en: State Administration of Cryptography
-:gb-standard-technical-committee-zh: 全国信息安全标准计算委员会（SAC/TC260）
-:gb-standard-technical-committee-en: National Information Security Standardization Technical Committee (SAC/TC260)
 :stem:
 
 :sectnums!:
 
-== 前言
-// Introduction
+.前言
+// Foreword
 
 本标准按照GB/T 1.1 2009的规则编写。
 //This standard is authored in accordance with GB/T 1.1-2009.
@@ -29,7 +34,7 @@ v0.1, February 9, 2018: Initial Import
 本标准由{gb-standard-proposer-zh}提出。
 //This standard is proposed by the State Cryptographic Administration of China.
 
-本标准由{gb-standard-technical-committee-zh}归口。
+本标准由{technical-committee-zh}归口。
 //This standard is managed by the National Information Security Standardization
 //Technical Committee (SAC/TC 260).
 
@@ -69,7 +74,7 @@ The main drafters of this standard include:
 * Wang Nina
 ////
 
-
+:sectnums!:
 == 引言
 //== Introduction
 
@@ -125,7 +130,7 @@ and to the development and testing of devices and systems that support the
 SM2 cryptographic algorithm.
 ////
 
-
+[bibliography]
 == 规范性引用文件
 //== Normative References
 
@@ -140,12 +145,12 @@ document. For referenced documents that are undated, the latest version
 (including all errata) applies to this document.
 ////
 
-* GM/T 0003 (所有部分) SM2椭圆曲线公钥密码算法
-* GM/T 0004 SM3密码杂凑算法
+* [[[GMT0003,GM/T 0003]]] (所有部分) _SM2椭圆曲线公钥密码算法_
+* [[[GMT0004,GM/T 0004]]] _SM3密码杂凑算法_
 
 ////
-* GM/T 0003 (all parts) SM2 Elliptic Curve Cryptography Public Key Algorithm
-* GM/T 0004 SM3 Cryptographic Hash Algorithm
+* <<GMT0003>> (all parts) SM2 Elliptic Curve Cryptography Public Key Algorithm
+* <<GMT0004>> SM3 Cryptographic Hash Algorithm
 ////
 
 
@@ -153,10 +158,11 @@ document. For referenced documents that are undated, the latest version
 //== Terms And Definitions
 
 下列术语和定义适用于本文件。
+
 //The following terms and definitions apply to this document.
 
-=== 算法标识
-[td-en]#algorithm identifier#
+
+=== 算法标识 [en]#algorithm identifier#
 
 用于标明算法机制的数字化信息
 
@@ -165,8 +171,7 @@ algorithm identifier::
   used to identify the algorithm that generated a digital message
 ////
 
-=== SM2密码算法
-[td-en]#SM2 algorithm#
+=== SM2密码算法 [en]#SM2 algorithm#
 
 一种椭圆曲线密码算法，密钥长度为256比特。
 
@@ -175,8 +180,7 @@ SM2 algorithm::
   an elliptic curve cryptographic algorithm, with a 256-bit long secret key.
 ////
 
-=== SM3算法
-[td-en]#SM3 algorithm#
+=== SM3算法 [en]#SM3 algorithm#
 
 一种杂凑算法，输出长度为256比特。
 
@@ -186,9 +190,7 @@ SM3 algorithm::
 ////
 
 
-== Symbols And Abbreviations
-
-符号和缩略语
+== 符号和缩略语
 
 下列缩略语适用于本文件：
 
@@ -222,13 +224,13 @@ ID::
 === SM2私钥
 
 SM2私钥是一个大于等于 `1` 且小于 `n-1` 的整数（ `n` 为SM2算法的阶，其值参见
-GM/T 0003），简记为 `k` ，长度为256位。
+<<GMT0003>>），简记为 `k` ，长度为256位。
 
 ////
 === SM2 Private Key
 
 The SM2 Private Key is a whole number larger than `1` but less than `(n-1)` (`n` is
-the number of rounds of the SM2 algorithm, refer to GM/T 0003 for its
+the number of rounds of the SM2 algorithm, refer to <<GMT0003>> for its
 value).  It is abbreviated as `k`, with a length of 256 bits.
 ////
 
@@ -288,7 +290,7 @@ stem:[M = M_0 M_1 ... M_{m l e n - 1}] 采用如下方法：
 M_i = B_{b l e n-8-8(m l e n-1-i)} B_{b l e n-7-8(m l e n-1-i)} ... B_{b l e n-1-8(m l e n-1-i)}
 ++++
 
-对于 stem:[M_0]，最左边stem:[8 - b l e n % 8] 位设置为0，右边设置为 
+对于 stem:[M_0]，最左边stem:[8 - b l e n % 8] 位设置为0，右边设置为
 stem:[B_0 B_1 … B_(8 - 8(m l e n) + b l e n - 1)]。
 //For stem:[M_0], the leftmost stem:[8 - b l e n % 8] position should be set to
 //stem:[0], the right of it is stem:[B_0 B_1 … B_(8 - 8(m l e n) + b l e n - 1)]
@@ -314,7 +316,7 @@ stem:[B = B_0 B_1 … B_(b l e n-1)] 采用如下方法：
 //STEPS: Converting octet string stem:[M = M_0 M_1 … M_(m l e n-1)] to bit string
 //stem:[B = B_0 B_1 … B_(b l e n-1)]
 
-从stem:[0 <= i <= m l e n-1]，设置： 
+从stem:[0 <= i <= m l e n-1]，设置：
 //From stem:[0 <= i <= m l e n-1], set:
 
 [stem]
@@ -393,7 +395,7 @@ M_{i} = x_{m l e n-1-i}
 
 将stem:[M_i] 看作stem:[[0~255]]中的一个整数
 //stem:[M_i] is like a whole number within stem:[[0~255]]
-　　　　 
+　　　　
 [stem]
 ++++
 x = sum_{i=0}^{m l e n-1} 2^{8(m l e n-1-i)} M_i
@@ -562,7 +564,7 @@ SM2EnvelopedKey ::=  SEQUENCE{
 //key, to calculate value `Z`.
 //`Z` is used in pre-processing 2, which is the SM2 key negotiation.
 
-输入:	
+输入:
 
 * `ID` ： 字节串。 用户身份标识。
 * `Q` ： `SM2PublicKey` 。用户的公钥。
@@ -574,7 +576,7 @@ INPUT:
 * `Q`: `SM2PublicKey`. User Public Key.
 ////
 
-输出:	
+输出:
 
 * `Z`: 字节串。 预处理1的输出。
 
@@ -610,8 +612,8 @@ Where:
 * `xA`, `yA` represents the User's Public Key.
 ////
 
-详细的计算过程参见GM/T 0003和GM/T 0004。
-//For detailed calculations see GM/T 0003 and GM/T 0004.
+详细的计算过程参见 <<GMT0003>> 和 <<GMT0004>>。
+//For detailed calculations see <<GMT0003>> and <<GMT0004>>.
 
 
 === 预处理2
@@ -621,7 +623,7 @@ Where:
 杂凑值 `H` 用于SM2数字签名。
 
 //Pre-processing 2 is the process of using value `Z` and the message to be
-//signed, utilize SM3 to calculate hash value `H`. 
+//signed, utilize SM3 to calculate hash value `H`.
 //Hash value `H` is used for the calculation of SM2 digital signatures.
 
 输入:
@@ -654,8 +656,8 @@ OUTPUT:
 H = SM3(Z|M)
 ----
 
-详细的计算过程参见GM/T 0003和GM/T 0004。
-//For detailed calculations see GM/T 0003 and GM/T 0004.
+详细的计算过程参见 <<GMT0003>> 和<<GMT0004>>。
+//For detailed calculations see <<GMT0003>> and <<GMT0004>>.
 
 
 == 计算过程
@@ -693,8 +695,8 @@ OUTPUT:
 * `Q`: `SM2PublicKey`. SM2 Public Key.
 ////
 
-详细的计算过程参见GM/T 0003。
-//For detailed calculations see GM/T 0003.
+详细的计算过程参见<<GMT0003>>。
+//For detailed calculations see <<GMT0003>>.
 
 
 
@@ -750,8 +752,8 @@ Where:
 //Output `c`'s `CipherText` is the ciphertext, its length is identical to that of
 //the plaintext.
 
-详细的计算过程参见GM/T 0003和GM/T 0004。
-//For detailed calculations see GM/T 0003 and GM/T 0004.
+详细的计算过程参见 <<GMT0003>> 和 <<GMT0004>>。
+//For detailed calculations see <<GMT0003>> and <<GMT0004>>.
 
 
 === 解密
@@ -789,8 +791,8 @@ OUTPUT:
 //`m` is the decrypted plaintext of `SM2Cipher`, the length of plaintext is
 //the same as that of the input `CipherText` of `c`.
 
-详细的计算过程参见GM/T 0003。
-//For detailed calculations see GM/T 0003.
+详细的计算过程参见<<GMT0003>>。
+//For detailed calculations see <<GMT0003>>.
 
 
 === 数字签名
@@ -818,8 +820,8 @@ OUTPUT:
 
 * `sign`: `SM2Signature`. Signature value.
 
-详细的计算过程参见 GM/T 0003。
-//For detailed calculations see GM/T 0003.
+详细的计算过程参见 <<GMT0003>>。
+//For detailed calculations see <<GMT0003>>.
 
 
 === 签名验证
@@ -855,8 +857,8 @@ OUTPUT:
 * `true` if "`validation passed`", `false` if "`validation failed`".
 ////
 
-详细的计算过程参见 GB/T 0003
-//For detailed calculations see GM/T 0003.
+详细的计算过程参见 <<GMT0003>>。
+//For detailed calculations see <<GMT0003>>.
 
 
 === 密钥协商
@@ -1015,8 +1017,8 @@ User stem:[B]:
   stem:[R_A], stem:[Q_B], stem:[R_B] as input to calculate stem:[K].
 ////
 
-详细的计算过程参见GM/T 0003和GM/T 0004。
-//For detailed calculations see GM/T 0003 and GM/T 0004.
+详细的计算过程参见 <<GMT0003>> 和 <<GMT0004>>。
+//For detailed calculations see <<GMT0003>> and <<GMT0004>>.
 
 == 用户身份标识 `ID` 的默认值
 //== Default Value For User Identifier `ID`
@@ -1031,3 +1033,6 @@ User stem:[B]:
 0x31 0x32 0x33 0x34 0x35 0x36 0x37 0x38 0x31 0x32 0x33 0x34 0x35 0x36 0x37 0x38
 ----
 
+
+[bibliography]
+== 参考文献

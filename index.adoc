@@ -1,6 +1,26 @@
-= GM/T 0009-2012 SM2 Cryptographic Algorithm Application Specification: English Translation
+= GM/T 0009-2012 SM2 Cryptographic Algorithm Application Specification
 Ronald Tse <ronald.tse@ribose.com>
-v0.2, January 9, 2017: Added foreword and introduction
+v0.1, February 9, 2018: Initial Import
+:docnumber: 0009
+:edition: 1
+:revdate: 2012-11-22
+:copyright-year: 2012
+:language: en
+:title-intro-zh: SM2密码算法使用规范
+:title-intro-en: SM2 cryptography algorithm application specification
+:published-date: 2012-11-22
+:activated-date: 2012-11-22
+:technical-committee-number: 260
+:technical-committee-type: technical
+:technical-committee: National Information Security Standardization Technical Committee (SAC/TC260)
+:technical-committee-zh: 全国信息安全标准计算委员会（SAC/TC260）
+:scope: sector
+:prefix: GM
+:mandate: recommended
+:gb-standard-publisher-zh: 国家密码管理局
+:gb-standard-publisher-en: State Administration of Cryptography
+:gb-standard-proposer-zh: 国家密码管理局
+:gb-standard-proposer-en: State Administration of Cryptography
 :stem:
 
 :sectnums!:
@@ -69,6 +89,7 @@ and to the development and testing of devices and systems that support the
 SM2 cryptographic algorithm.
 
 
+[bibliography]
 == Normative References
 
 The following documents are necessary for the application of this document. For
@@ -76,8 +97,8 @@ referenced documents that are dated, only the dated document applies to this
 document. For referenced documents that are undated, the latest version
 (including all errata) applies to this document.
 
-* GB/T 32918 (all parts), SM2 Elliptic Curve Cryptography Public Key Algorithm
-* GB/T 32905:2016, SM3 Cryptographic Hash Algorithm
+* [[[GMT0003,GM/T 0003]]] (all parts), SM2 Elliptic Curve Cryptography Public Key Algorithm
+* [[[GMT0004,GM/T 0004]]] SM3 Cryptographic Hash Algorithm
 
 
 == Terms And Definitions
@@ -110,7 +131,7 @@ ID::
 
 SM2 Private Key::
   The SM2 Private Key is a whole number larger than 1 but less than (n-1) (n is
-  the number of rounds of the SM2 algorithm, refer to GM/T 0003 for its
+  the number of rounds of the SM2 algorithm, refer to <<GMT0003>> for its
   value).  It is abbreviated as `k`, with a length of 256 bits.
 
 SM2 Public Key::
@@ -330,7 +351,7 @@ Where:
 * `xG`, `yG` are the base points;
 * `xA`, `yA` represents the User's Public Key.
 
-For detailed calculations see GM/T 0003 and GM/T 0004.
+For detailed calculations see <<GMT0003>> and <<GMT0004>>.
 
 
 === Pre-processing 2
@@ -354,7 +375,7 @@ Calculation:
 H = SM3(Z|M)
 ----
 
-For detailed calculations see GM/T 0003 and GM/T 0004.
+For detailed calculations see <<GMT0003>> and <<GMT0004>>.
 
 
 == Calculation Process
@@ -376,7 +397,7 @@ OUTPUT:
 * `k`: `SM2PrivateKey`. SM2 Private Key.
 * `Q`: `SM2PublicKey`. SM2 Public Key.
 
-For detailed calculations see GM/T 0003.
+For detailed calculations see <<GMT0003>>.
 
 
 === Encryption
@@ -404,7 +425,7 @@ Where:
 Output `c`'s CipherText is the ciphertext, its length is identical to that of
 the plaintext.
 
-For detailed calculations see GM/T 0003 and GM/T 0004.
+For detailed calculations see <<GMT0003>> and <<GMT0004>>.
 
 
 === Decryption
@@ -424,7 +445,7 @@ OUTPUT:
 `m` is the decrypted plaintext of `SM2Cipher`, the length of plaintext is
 the same as that of the input ciphertext `c`.
 
-For detailed calculations see GM/T 0003.
+For detailed calculations see <<GMT0003>>.
 
 
 === Digital Signature
@@ -441,7 +462,7 @@ OUTPUT:
 
 * `sign`: `SM2Signature`. Signature value.
 
-For detailed calculations see GM/T 0003.
+For detailed calculations see <<GMT0003>>.
 
 
 === Signature Verification
@@ -460,7 +481,7 @@ OUTPUT:
 
 * `true` if "`validation passed`", `false` if "`validation failed`".
 
-For detailed calculations see GM/T 0003.
+For detailed calculations see <<GMT0003>>.
 
 
 === Secret Key Negotiation
@@ -538,7 +559,7 @@ User stem:[B]:
 .. Use stem:[k l e n], stem:[Z_A], stem:[Z_B], stem:[d_A], stem:[r_A],
   stem:[R_A], stem:[Q_B], stem:[R_B] as input to calculate stem:[K].
 
-For detailed calculations see GM/T 0003 and GM/T 0004.
+For detailed calculations see <<GMT0003>> and <<GMT0004>>.
 
 
 == Default Value For User Identifier `ID`
@@ -552,3 +573,5 @@ with the default value from left to right as the following
 0x31 0x32 0x33 0x34 0x35 0x36 0x37 0x38 0x31 0x32 0x33 0x34 0x35 0x36 0x37 0x38
 ----
 
+[bibliography]
+== Reference documents
