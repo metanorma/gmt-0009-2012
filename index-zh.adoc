@@ -807,18 +807,22 @@ SM2签名是指使用预处理2的结果和签名者私钥，通过签名计算�
 * `d`: `SM2PrivateKey`。 签名者私钥。
 * `H`: 字节串。 预处理2的结果。
 
+////
 INPUT:
 
 * `d`: `SM2PrivateKey`. Signer's Private Key.
 * `H`: Byte String. Result of Pre-processing 2.
+////
 
 输出:
 
 * `sign`: `SM2Signature`。 签名值。
 
+////
 OUTPUT:
 
 * `sign`: `SM2Signature`. Signature value.
+////
 
 详细的计算过程参见 <<GMT0003>>。
 //For detailed calculations see <<GMT0003>>.
