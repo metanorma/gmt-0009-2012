@@ -162,7 +162,7 @@ document. For referenced documents that are undated, the latest version
 //The following terms and definitions apply to this document.
 
 
-=== 算法标识 [en]#algorithm identifier#
+=== [zh]#算法标识# [en]#algorithm identifier#
 
 用于标明算法机制的数字化信息
 
@@ -171,7 +171,7 @@ algorithm identifier::
   used to identify the algorithm that generated a digital message
 ////
 
-=== SM2密码算法 [en]#SM2 algorithm#
+=== [zh]#SM2密码算法# [en]#SM2 algorithm#
 
 一种椭圆曲线密码算法，密钥长度为256比特。
 
@@ -180,7 +180,7 @@ SM2 algorithm::
   an elliptic curve cryptographic algorithm, with a 256-bit long secret key.
 ////
 
-=== SM3算法 [en]#SM3 algorithm#
+=== [zh]#SM3算法# [en]#SM3 algorithm#
 
 一种杂凑算法，输出长度为256比特。
 
