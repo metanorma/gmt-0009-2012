@@ -15,7 +15,7 @@ v0.1, February 9, 2018: Initial Import
 :technical-committee: National Information Security Standardization Technical Committee (SAC/TC260)
 :technical-committee-zh: 全国信息安全标准计算委员会（SAC/TC260）
 :scope: sector
-:prefix: GM/T
+:prefix: GM
 :mandate: recommended
 :gb-standard-publisher-zh: 国家密码管理局
 :gb-standard-publisher-en: State Administration of Cryptography
