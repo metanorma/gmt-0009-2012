@@ -6,8 +6,8 @@ v0.1, February 9, 2018: Initial Import
 :revdate: 2012-11-22
 :copyright-year: 2012
 :language: zh
-:title-intro-zh: SM2密码算法使用规范
-:title-intro-en: SM2 cryptography algorithm application specification
+:title-main-zh: SM2密码算法使用规范
+:title-main-en: SM2 cryptography algorithm application specification
 :published-date: 2012-11-22
 :activated-date: 2012-11-22
 :technical-committee-number: 260
