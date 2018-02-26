@@ -918,7 +918,7 @@ send stem:[R_B] and user stem:[B]'s user identifier stem:[ID_B] to user stem:[A]
 第二阶段：计算共享秘密密钥
 //Stage 2: Calculate The Shared Secret Key
 
-用户stem:[A]：
+用户 stem:[A]：
 //User stem:[A]:
 
 * 输入参数：
@@ -970,7 +970,7 @@ send stem:[R_B] and user stem:[B]'s user identifier stem:[ID_B] to user stem:[A]
 ////
 
 
-User stem:[B]:
+用户 stem:[B]:
 
 * 输入参数：
 
