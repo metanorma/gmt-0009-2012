@@ -1,20 +1,29 @@
-= GM/T 0009-2012 SM2 Cryptography Algorithm Application Specification (English Translation)
+= GM/T 0009-2012 SM2 Cryptography Algorithm Application Specification
 
-== Building The Document
+This is a re-creation of the GM/T 0009-2012 document using https://github.com/riboseinc/asciidoctor-gb/[asciidoctor-gb] using the https://github.com/riboseinc/gbdoc[GbDoc] model.
 
-=== HTML
+The output is in `.doc` and `.html` formats.
 
-[source,sh]
-----
-make clean gmt-0009-2012.html
-----
+== Usage
 
-=== PDF
+=== Prerequisites
 
 [source,sh]
 ----
-make clean gmt-0009-2012.pdf
+bundle
 ----
+
+=== Building The Document
+
+==== DOC, HTML
+
+[source,sh]
+----
+make clean all
+----
+
+==== PDF
+
+TBD.
 
 NOTE: building in PDF doesn't properly render math blocks yet.
-
