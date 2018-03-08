@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/riboseinc/asciidoctor-gb
-  revision: 9348f600d51baa75c9ce09652dca5659de203514
+  revision: 83d527dab710370803e0cfd62af799ba6a4ed27a
   specs:
     asciidoctor-gb (0.1.5)
       asciidoctor (~> 1.5.6)
@@ -18,9 +18,9 @@ GIT
 
 GIT
   remote: https://github.com/riboseinc/asciidoctor-iso
-  revision: f3581b9798b92ad1d208ba82ae0d1c03a1b282f7
+  revision: ba49137764931818cdffcf0369cb50f8bfc58c8d
   specs:
-    asciidoctor-iso (0.6.1)
+    asciidoctor-iso (0.7.0)
       asciidoctor (~> 1.5.6)
       html2doc
       htmlentities (~> 4.3.4)
@@ -32,9 +32,9 @@ GIT
 
 GIT
   remote: https://github.com/riboseinc/html2doc
-  revision: 3eb26a6807a55abc4b2e35570601618568f12e07
+  revision: 14510a6edb20caf3664eb5d7a86694f43fb087df
   specs:
-    html2doc (0.6.2)
+    html2doc (0.6.5)
       asciimath
       htmlentities (~> 4.3.4)
       image_size
@@ -46,16 +46,16 @@ GIT
 
 GIT
   remote: https://github.com/riboseinc/isodoc
-  revision: 8f72fd147e13f39ae46ff57bc131a21d93d6a9e9
+  revision: 412f47ae49a62d4b98121528aa418d57bace1ffa
   specs:
-    isodoc (0.5.0)
+    isodoc (0.5.5)
       asciimath
       html2doc
       htmlentities (~> 4.3.4)
       image_size
       liquid
       mime-types
-      nokogiri (= 1.8.1)
+      nokogiri
       ruby-xslt
       thread_safe
       uuidtools
