@@ -6,36 +6,32 @@ v0.1, February 9, 2018: Initial Import
 :revdate: 2012-11-22
 :copyright-year: 2012
 :language: en
+:script: Latn
 :title-main-zh: SM2密码算法使用规范
 :title-main-en: SM2 cryptography algorithm application specification
 :published-date: 2012-11-22
 :activated-date: 2012-11-22
-:technical-committee-number: 260
+:technical-committee-number:
 :technical-committee-type: technical
-:technical-committee: National Information Security Standardization Technical Committee (SAC/TC260)
-:technical-committee-zh: 全国信息安全标准计算委员会（SAC/TC260）
+:technical-committee: State Cryptographic Administration of China
+:technical-committee-zh: 国家密码管理局
+:library-ics: 35.040
+:library-L: 80
 :scope: sector
 :prefix: GM
 :mandate: recommended
-:gb-standard-publisher-zh: 国家密码管理局
-:gb-standard-publisher-en: State Administration of Cryptography
-:gb-standard-proposer-zh: 国家密码管理局
-:gb-standard-proposer-en: State Administration of Cryptography
 :stem:
 
 :sectnums!:
 
-== Foreword
+.Foreword
 
 This standard is authored in accordance with GB/T 1.1-2009.
 
 Please note that some of this document involve patents. The publishers of this
 document do not bear responsibility of identifying these patents.
 
-This standard is proposed by the State Cryptographic Administration of China.
-
-This standard is managed by the National Information Security Standardization
-Technical Committee (SAC/TC 260).
+This standard is proposed and managed by the State Cryptographic Administration of China.
 
 This standard was drafted by these organizations:
 
@@ -103,14 +99,14 @@ document. For referenced documents that are undated, the latest version
 
 == Terms And Definitions
 
-algorithm identifier::
-  used to identify the algorithm that generated a digital message
+=== [en]#algorithm identifier# [zh]#算法标识#
+used to identify the algorithm that generated a digital message
 
-SM2 algorithm::
-  an elliptic curve cryptographic algorithm, with a 256-bit long secret key.
+=== [en]#SM2 algorithm# [zh]#SM2密码算法#
+an elliptic curve cryptographic algorithm, with a 256-bit long secret key.
 
-SM3 algorithm::
-  a hash algorithm with an output length of 256 bits.
+=== [en]#SM3 algorithm# [zh]#SM3算法#
+a hash algorithm with an output length of 256 bits.
 
 
 == Symbols And Abbreviations
@@ -129,15 +125,17 @@ ID::
 
 == SM2 Key Pairs
 
-SM2 Private Key::
-  The SM2 Private Key is a whole number larger than 1 but less than (n-1) (n is
-  the number of rounds of the SM2 algorithm, refer to <<GMT0003>> for its
-  value).  It is abbreviated as `k`, with a length of 256 bits.
+=== SM2 Private Key
 
-SM2 Public Key::
-  The SM2 Public Key is a point on the SM2 Curve, represented by its x- and
-  y-coordinates as (x, y), abbreviated as `Q`, with each coordinate of length
-  256 bits.
+The SM2 Private Key is a whole number larger than 1 but less than (n-1) (n is
+the number of rounds of the SM2 algorithm, refer to <<GMT0003>> for its
+value).  It is abbreviated as `k`, with a length of 256 bits.
+
+=== SM2 Public Key
+
+The SM2 Public Key is a point on the SM2 Curve, represented by its x- and
+y-coordinates as `(x, y)`, abbreviated as `Q`, with each coordinate of length
+256 bits.
 
 
 == Data Conversion
@@ -575,3 +573,4 @@ with the default value from left to right as the following
 
 [bibliography]
 == Reference documents
+

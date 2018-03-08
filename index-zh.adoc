@@ -6,27 +6,26 @@ v0.1, February 9, 2018: Initial Import
 :revdate: 2012-11-22
 :copyright-year: 2012
 :language: zh
+:script: Hans
 :title-main-zh: SM2密码算法使用规范
 :title-main-en: SM2 cryptography algorithm application specification
 :published-date: 2012-11-22
 :activated-date: 2012-11-22
 :technical-committee-number: 260
 :technical-committee-type: technical
-:technical-committee: National Information Security Standardization Technical Committee (SAC/TC260)
-:technical-committee-zh: 全国信息安全标准计算委员会（SAC/TC260）
+:technical-committee: State Cryptographic Administration of China
+:technical-committee-zh: 国家密码管理局
+:library-ics: 35.040
+:library-L: 80
 :scope: sector
 :prefix: GM
 :mandate: recommended
-:gb-standard-publisher-zh: 国家密码管理局
-:gb-standard-publisher-en: State Administration of Cryptography
-:gb-standard-proposer-zh: 国家密码管理局
-:gb-standard-proposer-en: State Administration of Cryptography
 :stem:
 
 :sectnums!:
 
-.前言
-// Foreword
+//.前言
+.Foreword
 
 本标准按照GB/T 1.1 2009的规则编写。
 //This standard is authored in accordance with GB/T 1.1-2009.
@@ -75,6 +74,8 @@ The main drafters of this standard include:
 ////
 
 :sectnums!:
+[[introduction]]
+[heading=introduction]
 == 引言
 //== Introduction
 
@@ -113,7 +114,8 @@ calculations.
 ////
 
 :sectnums:
-
+[[scope]]
+[heading=scope]
 == 范围
 //== Scope
 
@@ -153,14 +155,14 @@ document. For referenced documents that are undated, the latest version
 * <<GMT0004>> SM3 Cryptographic Hash Algorithm
 ////
 
-
+[[terms]]
+[heading=Terms and definitions]
 == 术语和定义
 //== Terms And Definitions
 
 下列术语和定义适用于本文件。
 
 //The following terms and definitions apply to this document.
-
 
 === [zh]#算法标识# [en]#algorithm identifier#
 
