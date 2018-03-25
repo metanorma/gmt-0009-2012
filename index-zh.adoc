@@ -145,7 +145,7 @@ document. For referenced documents that are undated, the latest version
 (including all errata) applies to this document.
 ////
 
-* [[[GMT0003,GM/T 0003]]] (所有部分) _SM2椭圆曲线公钥密码算法_
+* [[[GMT0003,GM/T 0003 (all parts)]]] _SM2椭圆曲线公钥密码算法_
 * [[[GMT0004,GM/T 0004]]] _SM3密码杂凑算法_
 
 ////

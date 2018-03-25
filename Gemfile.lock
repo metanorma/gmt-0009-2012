@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/riboseinc/asciidoctor-gb
-  revision: 30a03f56d581c902150d6b846c0fb9c592378434
+  revision: eb9eb5efb3866f4025a1f23974778ceae3ab5f14
   specs:
-    asciidoctor-gb (0.1.5)
+    asciidoctor-gb (0.1.6)
       asciidoctor (~> 1.5.6)
       asciidoctor-iso
       asciimath
@@ -18,23 +18,24 @@ GIT
 
 GIT
   remote: https://github.com/riboseinc/asciidoctor-iso
-  revision: ba49137764931818cdffcf0369cb50f8bfc58c8d
+  revision: ac0269a017db010a3ffb42d823b9d66fe4f07842
   specs:
-    asciidoctor-iso (0.7.0)
+    asciidoctor-iso (0.7.2)
       asciidoctor (~> 1.5.6)
       html2doc
       htmlentities (~> 4.3.4)
       isodoc
-      nokogiri (= 1.8.1)
+      nokogiri
       ruby-jing
+      sass
       thread_safe
       uuidtools
 
 GIT
   remote: https://github.com/riboseinc/html2doc
-  revision: 90a4f74a16e1a9540b7a5e47b21b912331eca5e3
+  revision: e894e08eefac247184ec540566e05eee8d7b09fe
   specs:
-    html2doc (0.6.5)
+    html2doc (0.6.9)
       asciimath
       htmlentities (~> 4.3.4)
       image_size
@@ -46,9 +47,9 @@ GIT
 
 GIT
   remote: https://github.com/riboseinc/isodoc
-  revision: f823ffabae4348481d9b52f049710eb6a3b04324
+  revision: 1252abd98b6a0e70cd280d3d1f1fb5eb49910f79
   specs:
-    isodoc (0.5.5)
+    isodoc (0.5.7)
       asciimath
       html2doc
       htmlentities (~> 4.3.4)
@@ -64,8 +65,9 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    asciidoctor (1.5.6.1)
+    asciidoctor (1.5.6.2)
     asciimath (1.0.4)
+    ffi (1.9.23)
     htmlentities (4.3.4)
     image_size (1.5.0)
     liquid (4.0.0)
@@ -73,13 +75,21 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
     mini_portile2 (2.3.0)
-    nokogiri (1.8.1)
+    nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
     optout (0.0.2)
+    rb-fsevent (0.10.3)
+    rb-inotify (0.9.10)
+      ffi (>= 0.5.0, < 2)
     roman-numerals (0.3.0)
     ruby-jing (0.0.1)
       optout (>= 0.0.2)
     ruby-xslt (0.9.10)
+    sass (3.5.6)
+      sass-listen (~> 4.0.0)
+    sass-listen (4.0.0)
+      rb-fsevent (~> 0.9, >= 0.9.4)
+      rb-inotify (~> 0.9, >= 0.9.7)
     thread_safe (0.3.6)
     uuidtools (2.1.5)
 

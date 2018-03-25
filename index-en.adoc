@@ -93,7 +93,7 @@ referenced documents that are dated, only the dated document applies to this
 document. For referenced documents that are undated, the latest version
 (including all errata) applies to this document.
 
-* [[[GMT0003,GM/T 0003]]] (all parts), SM2 Elliptic Curve Cryptography Public Key Algorithm
+* [[[GMT0003,GM/T 0003 (all parts)]]] SM2 Elliptic Curve Cryptography Public Key Algorithm
 * [[[GMT0004,GM/T 0004]]] SM3 Cryptographic Hash Algorithm
 
 
