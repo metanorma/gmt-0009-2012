@@ -16,7 +16,7 @@ v0.1, February 9, 2018: Initial Import
 :technical-committee: State Cryptographic Administration of China
 :technical-committee-zh: 国家密码管理局
 :library-ics: 35.040
-:library-L: 80
+:library-ccs: L80
 :scope: sector
 :prefix: GM
 :mandate: recommended
@@ -24,8 +24,7 @@ v0.1, February 9, 2018: Initial Import
 
 :sectnums!:
 
-//.前言
-.Foreword
+.前言
 
 本标准按照GB/T 1.1 2009的规则编写。
 //This standard is authored in accordance with GB/T 1.1-2009.
@@ -73,7 +72,6 @@ The main drafters of this standard include:
 
 :sectnums!:
 [[introduction]]
-[heading=introduction]
 == 引言
 //== Introduction
 
@@ -113,7 +111,6 @@ calculations.
 
 :sectnums:
 [[scope]]
-[heading=scope]
 == 范围
 //== Scope
 
@@ -154,11 +151,7 @@ document. For referenced documents that are undated, the latest version
 ////
 
 [[terms]]
-[heading=Terms and definitions]
 == 术语和定义
-//== Terms And Definitions
-
-下列术语和定义适用于本文件。
 
 //The following terms and definitions apply to this document.
 

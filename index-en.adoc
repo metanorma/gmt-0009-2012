@@ -16,7 +16,7 @@ v0.1, February 9, 2018: Initial Import
 :technical-committee: State Cryptographic Administration of China
 :technical-committee-zh: 国家密码管理局
 :library-ics: 35.040
-:library-L: 80
+:library-ccs: L80
 :scope: sector
 :prefix: GM
 :mandate: recommended
