@@ -18,8 +18,8 @@
 :mandate: recommended
 :library-ics: 35.040
 :library-ccs: L80
-:proposer: 国家密码管理局
-:authority: 国家密码管理局
+:proposer: State Cryptography Administration
+:authority: State Cryptography Administration
 :stem:
 
 :sectnums!:
@@ -75,6 +75,7 @@ calculations.
 
 :sectnums:
 
+[[scope]]
 == Scope
 
 This standard defines the usage methods of the SM2 cryptographic algorithm, as
@@ -180,7 +181,7 @@ STEPS: Converting octet string stem:[M = M_0 M_1 … M_(m l e n-1)] to bit strin
 
 [stem]
 ++++
-B_(8i) B_(8i+1) … B_(8i+7) = M_i
+B_(8i) B_(8i+1) ... B_(8i+7) = M_i
 ++++
 
 OUTPUT stem:[B].
