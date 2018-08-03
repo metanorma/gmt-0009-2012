@@ -1,0 +1,1569 @@
+<?xml version="1.0"?>
+<!DOCTYPE html SYSTEM "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:epub="http://www.idpf.org/2007/ops">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>gmt-0009-2012-en</title><style>
+  <!--
+/*
+    0 CSS RESET
+*/
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0; }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  border: 0;
+  font-size: 100%; }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, tt, var,
+b, u, i, center,
+dl, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  vertical-align: baseline; }
+
+html, body, div, span, applet, object, iframe,
+p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  font-family: "Cambria", serif; }
+
+h1, h2, h3, h4, h5, h6, .h2Annex {
+  font-family: "Calibri", sans-serif; }
+
+dl {
+  display: grid;
+  grid-template-columns: max-content auto; }
+
+dt {
+  grid-column-start: 1; }
+
+dd {
+  grid-column-start: 2; }
+
+dd p, dt p {
+  margin-top: 0px; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1.3; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  margin-left: 298px;
+  margin-right: 2em; }
+
+main {
+  padding-left: 4em;
+  padding-right: 2em; }
+
+.title-section, .prefatory-section {
+  padding-left: 4em;
+  padding-top: 2em; }
+
+.prefatory-section {
+  margin-bottom: 5em; }
+
+.doctitle-en, .doctitle-fr {
+  margin-top: 2em;
+  text-align: left; }
+
+.doctitle-en {
+  background-color: black;
+  padding-left: 3em;
+  margin-left: -3em;
+  padding-top: 2em;
+  padding-bottom: 2em; }
+
+.doctitle-en span {
+  font-size: 1.5em;
+  line-height: 1.5em;
+  font-weight: 900;
+  display: block;
+  color: white; }
+
+.doctitle-fr span {
+  font-size: 1.2em;
+  line-height: 1.2em;
+  font-style: italic;
+  display: block; }
+
+span.title {
+  text-transform: uppercase;
+  font-size: 1em;
+  font-weight: 800; }
+
+.coverpage_docstage {
+  margin-top: 2em;
+  margin-bottom: 2em; }
+
+.coverpage_warning {
+  border-top: solid 1px #f36f36;
+  border-bottom: solid 1px #f36f36;
+  margin: 1em 2em;
+  color: #485094;
+  padding: 1em; }
+
+.coverpage_warning .title {
+  color: #f36f36;
+  font-weight: 500; }
+
+.coverpage_warning .content {
+  font-style: italic; }
+
+.coverpage_docnumber, .coverpage_techcommittee {
+  text-align: right;
+  font-size: 14.0pt; }
+
+.coverpage {
+  text-align: center;
+  margin: 2em 0; }
+
+.coverpage-category {
+  float: left;
+  text-align: left; }
+
+.coverpage-logo {
+  color: #485094; }
+
+.coverpage-tc-name {
+  color: #485094;
+  font-size: 1.2em;
+  line-height: 1.2em;
+  margin: 0.25em 0; }
+
+.coverpage-doc-identity {
+  background-color: #485094;
+  color: white;
+  font-size: 2em;
+  line-height: 2em;
+  margin: 0.5em 0; }
+
+.coverpage-doc-identity-first {
+  font-size: 5mm;
+  text-align: right;
+  padding-right: 5mm;
+  padding-bottom: 1em;
+  padding-top: 1em; }
+
+.coverpage-title {
+  font-weight: 400; }
+
+.coverpage-title .title-second {
+  display: none; }
+
+.coverpage-logo-text {
+  font-size: 24.0pt; }
+
+.coverpage-stage-block {
+  font-style: italic;
+  text-align: center;
+  font-size: 1.25em;
+  font-weight: 600; }
+
+span.date-publish {
+  float: left; }
+
+span.date-active {
+  float: right; }
+
+.coverpage-doc-relations {
+  font-size: 10.5pt;
+  padding-top: 0.5em; }
+
+.coverpage-title-zh {
+  font-size: 8mm;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* flex-direction: column; */
+  font-family: "Calibri", sans-serif; }
+
+.coverpage-title-zh span {
+  padding-top: 2mm;
+  font-size: 28pt; }
+
+.coverpage-title-en {
+  margin-top: 10mm;
+  font-size: 18pt;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-family: "Calibri", sans-serif; }
+
+.coverpage-title-en span {
+  display: block; }
+
+.coverpage-title-en .title-first {
+  text-transform: uppercase; }
+
+.coverpage-iso-relation {
+  font-size: 14pt;
+  margin-top: 10mm;
+  text-align: center; }
+
+.coverpage-dates {
+  font-size: 14.0pt;
+  width: 100%;
+  margin-top: 25mm;
+  font-family: "Calibri", sans-serif;
+  border-bottom: 1px solid #000; }
+
+.coverpage_footer {
+  text-align: center;
+  font-size: 16pt;
+  font-weight: 600;
+  width: 100%;
+  margin-top: 10mm; }
+
+/* NEW */
+.coverpage_footer table, .coverpage_footer th, .coverpage_footer td {
+  border: 0; }
+
+/* NEW */
+.coverpage_footer th, .coverpage_footer td {
+  padding: 5px;
+  font-size: 1.1em;
+  font-weight: 600; }
+
+/* NEW */
+.coverpage_footer .publish {
+  vertical-align: middle; }
+
+.coverpage-banner {
+  padding-top: 5mm;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }
+
+.copyright .name {
+  font-weight: 900;
+  padding-top: 1em; }
+
+.copyright .year, .copyright .message,
+.copyright .name, .copyright .address {
+  margin-top: 1em;
+  line-height: 1.1em;
+  display: block; }
+
+.copyright .message, .copyright .name,
+.copyright .address {
+  font-size: 0.9em; }
+
+.copyright .name {
+  color: #485094;
+  font-weight: 600; }
+
+.copyright .address {
+  color: #485094; }
+
+/* TYPOGRAPHY */
+h1 {
+  font-size: 1.5em;
+  line-height: 2em;
+  color: #485094;
+  font-weight: 400; }
+
+h2 {
+  font-size: 1.3em;
+  line-height: 1.5em;
+  color: #485094;
+  font-weight: 300; }
+
+h3 {
+  font-size: 1.1em;
+  line-height: 1.3em;
+  color: #485094;
+  font-weight: 300; }
+
+h1 {
+  margin-top: 2em;
+  margin-bottom: 1em; }
+
+h2 {
+  margin-top: 2em;
+  margin-bottom: 1em; }
+
+h4, h5, h6 {
+  line-height: 1.2; }
+
+h2 p {
+  display: inline; }
+
+p {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  line-height: 1.2em; }
+
+p.zzSTDTitle1 {
+  font-weight: 700;
+  font-size: 1.5em; }
+
+span.obligation {
+  font-weight: 400; }
+
+a, a:visited {
+  text-decoration: none;
+  color: #485094; }
+
+a:hover {
+  text-style: italic;
+  color: #485094; }
+
+nav a {
+  color: black;
+  text-decoration: none;
+  line-height: 1.2em; }
+
+p.TermNum {
+  color: #485094;
+  font-weight: 400;
+  margin: 0; }
+
+p.Terms {
+  color: #485094;
+  font-weight: 400;
+  margin: 0; }
+
+p.AltTerms {
+  color: #485094;
+  font-weight: 400;
+  font-style: italic;
+  margin: 0; }
+
+p.DeprecatedTerms {
+  color: #485094;
+  font-weight: 400;
+  font-style: italic;
+  margin: 0; }
+
+/* Navigation*/
+@media (min-width: 768px) {
+  nav {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 278px;
+    font-size: 0.9em;
+    overflow: auto;
+    padding: 0 0 0 45px;
+    background-color: #f7f7f7; }
+
+  #toggle {
+    position: fixed;
+    height: 100%;
+    width: 30px;
+    background-color: black;
+    color: white !important;
+    cursor: pointer;
+    margin-left: -4em;
+    margin-top: -2em; }
+
+  #toggle span {
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%); }
+
+  .container {
+    padding-left: 360px; }
+
+  .rule.toc {
+    display: none; }
+
+  h1.toc-contents {
+    margin-top: 1em; }
+
+  ul#toc-list {
+    padding: 0;
+    margin: 0; } }
+@media (max-width: 768px) {
+  #toc {
+    padding: 0 1.5em 0 1.5em;
+    overflow: visible; }
+
+  #toggle {
+    display: none;
+    margin-left: -4em;
+    margin-top: -2em; }
+
+  body {
+    margin-left: 2em; }
+
+  main {
+    padding: 0; }
+
+  .title-section, .prefatory-section {
+    padding-left: 0;
+    padding-top: 0;
+    width: 100%; } }
+#toc ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+#toc li {
+  padding: 5px 10px; }
+
+#toc a {
+  text-decoration: none;
+  display: block; }
+
+#toc a:hover {
+  color: white; }
+
+#toc .h2 {
+  padding-left: 30px; }
+
+#toc .h3 {
+  padding-left: 50px; }
+
+#toc .toc-active a {
+  color: white; }
+
+#toc .toc-active, #toc li:hover {
+  background: #1d1d1d;
+  box-shadow: inset -5px 0px 10px -5px #1d1d1d !important; }
+
+#toc li:hover a {
+  color: white; }
+
+/*
+ul li {
+    list-style: none;
+  }
+
+  ul li p:before {
+    content: "?~@~T";
+    display: inline-block;
+    width: 1em;
+    margin-left: -1.5em;
+    margin-right: 0.5em;
+  }
+*/
+li p {
+  /* display: inline-block; */
+  margin-bottom: 0.6em;
+  line-height: 1.2; }
+
+#toc li:before {
+  content: " ";
+  display: none; }
+
+/*
+    Document types + stages
+*/
+.document-type-band {
+  left: 0;
+  top: 180px;
+  height: 100%;
+  position: fixed;
+  display: block;
+  z-index: 99;
+  /*box-shadow: -5px 0px 10px #1d1d1d*/ }
+
+.document-stage-band {
+  left: 0;
+  top: 0;
+  height: 100%;
+  position: fixed;
+  display: block;
+  z-index: 98;
+  box-shadow: -5px 0px 10px #1d1d1d; }
+
+.document-type {
+  position: relative;
+  width: 25px; }
+
+.document-stage {
+  position: relative;
+  width: 25px; }
+
+p.document-type, p.document-stage {
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  margin: 0;
+  margin-left: 6px;
+  writing-mode: tb-rl;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  white-space: nowrap;
+  display: block;
+  bottom: 0; }
+
+p.document-type {
+  font-weight: 400;
+  height: 210px; }
+
+#governance-band p.document-type {
+  font-weight: 400;
+  height: 230px !important; }
+
+p.document-stage {
+  font-weight: 300;
+  height: 160px; }
+
+#standard-band {
+  background-color: #0ac442; }
+
+#standard {
+  border-bottom: solid 3px #0ac442; }
+
+#governance {
+  border-bottom: solid 3px #750697; }
+
+#governance-band {
+  background-color: #750697; }
+
+#guide {
+  border-bottom: solid 3px #48a0e7; }
+
+#guide-band {
+  background-color: #48a0e7; }
+
+.coverpage-maturity {
+  font-family: 'Overpass', sans-serif;
+  font-weight: 400;
+  font-size: 1em;
+  margin: 0 0 2em 0;
+  text-transform: uppercase; }
+
+#working-draft {
+  border-bottom: solid 3px #fda706; }
+
+#working-draft-band {
+  background-color: #fda706; }
+
+#committee-draft {
+  border-bottom: solid 3px #fd06fd; }
+
+#committee-draft-band {
+  background-color: #fd06fd; }
+
+#draft-standard {
+  border-bottom: solid 3px #fdf906; }
+
+#draft-standard {
+  border-bottom: solid 3px #fdf906; }
+
+#standard {
+  border-bottom: solid 3px #0ac442; }
+
+#standard-band {
+  background-color: #0ac442; }
+
+#obsolete {
+  border-bottom: solid 3px #7e0d13; }
+
+#obsolete-band {
+  background-color: #7e0d13; }
+
+/* 3 Other styles */
+/*
+    3.3 Lists
+*/
+ul, ol {
+  margin-left: 2em; }
+
+#toc-list ul {
+  margin-bottom: 0.25em; }
+
+#toc-list ul li {
+  list-style-type: none; }
+
+/*
+3.4 Rules
+*/
+.rule {
+  width: 100%;
+  height: 1px;
+  background-color: #0e1a85;
+  margin: 2em 0; }
+
+/*
+3.5 Bibliograhy
+*/
+p.Biblio, p.NormRef {
+  margin-top: 1em;
+  margin-left: 2em; }
+
+/*
+3.6 Source Code + figures
+*/
+.Sourcecode {
+  font-family: "Courier New", monospace; }
+
+.figure, .Sourcecode {
+  background-color: #f7f7f7;
+  line-height: 1.6em;
+  padding: 1.5em;
+  margin: 2em 0 1em 0;
+  overflow: auto; }
+
+.figure-title, .FigureTitle {
+  font-weight: 700;
+  font-size: 1em;
+  text-align: center; }
+
+/*
+3.7 Notes
+*/
+.Note, .note {
+  background-color: #fff495;
+  color: #47430c;
+  padding: 0.5em;
+  margin: 1.5em 0 1.5em 0;
+  text-align: left; }
+
+.Note p, .note p {
+  margin: 0; }
+
+/*
+3.8 Examples
+*/
+.example {
+  background-color: #e1eef1;
+  padding: 0.5em;
+  margin: 2em 0 1em 0;
+  text-align: left; }
+
+.example p {
+  margin: 0; }
+
+.example .example-title {
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 0; }
+
+/*
+3.9 Tables
+*/
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-weight: 300;
+  margin: 1em 0 2em 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 2em;
+  text-align: center; }
+
+table, th, td {
+  border: 1px solid black;
+  font-size: 0.95em; }
+
+td, th {
+  padding: 1em !important; }
+
+td.header {
+  font-weight: 400; }
+
+p.TableTitle {
+  text-align: center;
+  margin-top: 2.5em;
+  font-weight: 800;
+  font-size: 1.1em; }
+
+.TableFootnote {
+  text-align: left !important; }
+
+/*
+3.10 Footnotes
+*/
+a.footnote-number, a.TableFootnoteRef {
+  vertical-align: super;
+  font-size: 0.8em; }
+
+.footnote {
+  font-size: 0.9em; }
+
+sup a {
+  vertical-align: super;
+  font-size: 0.8em; }
+
+#footnote_box {
+  font-size: 14px;
+  background: white;
+  padding: 0 10px;
+  margin: 10px;
+  border: 1px solid #888;
+  -moz-box-shadow: 0px 0px 5px #888;
+  -webkit-box-shadow: 0px 0px 5px #888;
+  box-shadow: 0px 0px 5px #888; }
+
+ol.footnotes-list, aside.footnote {
+  margin-left: 1em; }
+
+ol.footnotes-list li, aside.footnote {
+  font-size: 0.9em;
+  vertical-align: top;
+  list-style: decimal;
+  margin-bottom: 1em; }
+
+ol.footnotes-list:first-child {
+  margin-top: 2em; }
+
+ol.footnotes-list p, aside.footnote {
+  display: inline; }
+
+ol li p:before {
+  content: "";
+  display: none; }
+
+/*
+3.11 Blockquotes
+*/
+.blockquote, .Quote {
+  background-color: #f7f7f7;
+  font-style: italic;
+  width: 80%;
+  padding: 1.5em;
+  margin-top: 2em;
+  margin-left: auto;
+  margin-right: auto; }
+
+/*
+3.12 Formulas
+*/
+.formula {
+  background-color: #f7f7f7;
+  padding: 1.5em;
+  margin-top: 2em;
+  text-align: center;
+  margin-left: 20%;
+  margin-right: 20%;
+  font-size: 0.9em; }
+
+/*
+Keywords
+*/
+span.keyword {
+  font-weight: 600; }
+
+.Admonition, .admonition {
+  background-color: #ffb3b3;
+  /* color: #47430c;*/
+  padding: 0.5em;
+  margin: 1.5em 0 1.5em 0;
+  text-align: left; }
+
+.Admonition p, .admonition p {
+  margin: 0; }
+
+-->
+</style>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!--TOC script import-->
+<script type="text/javascript" src="https://cdn.rawgit.com/jgallen23/toc/0.3.2/dist/toc.min.js"></script>
+
+<!--Google fonts-->
+<link href="https://fonts.googleapis.com/css?family=Overpass:300,300i,600,900" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,900" rel="stylesheet" />
+<!--Font awesome import for the link icon-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css" integrity="sha384-v2Tw72dyUXeU3y4aM2Y0tBJQkGfplr39mxZqlTBDUZAb9BGoC40+rdFCG0m10lXk" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/fontawesome.css" integrity="sha384-q3jl8XQu1OpdLgGFvNRnPdj5VIlCvgsDQTQB6owSOHWlAurxul7f+JpUOVdAiJ5P" crossorigin="anonymous" />
+</head>
+  <body lang="EN-US" link="blue" vlink="#954F72" xml:lang="EN-US">
+    <div class="title-section"><div class="document-stage-band" id="standard-band">
+<p class="document-stage">standard</p> 
+    </div>
+
+    <div class="document-type-band" id="recommendation-band">
+      <p class="document-type">Recommendation</p>
+    </div>
+
+<div id="toggle"> <span>&#x2022;</span> </div>
+
+<header>
+<div class="coverpage">
+                  <div class="coverpage-header">
+
+
+  <div class="coverpage-category">
+    <span class="category-1">L80</span>
+    <span class="category-2">ICS 35.040 </span>
+  </div>
+
+  <div class="coverpage-logo">
+    <div class="coverpage-logo-gb-img"><img width='113' height='56' src='gb-standard-gm.gif' alt='GM'></img></div>
+  </div>
+
+  <div class="coverpage-logo-header">
+                                        <div>
+                                        <span class="coverpage-logo-text">
+
+    <span class="coverpage-logo-text">People's Republic of China  Cryptography  Industry Standard</span>
+
+  </span></div>
+
+  <div class="coverpage-doc-identity-first">
+    <div class="coverpage_docnumber">
+      <span class="docnumber">GM/T 0009&mdash;2012</span>
+      </div>
+
+    <div class="coverpage-doc-relations">
+    
+    </div>
+  </div>
+  </div>
+                  </div>
+</div>
+
+                <div class="coverpage-banner">
+
+
+  <div class="coverpage-doc-identity-second">
+    <div class="coverpage-title-zh">
+      <span class="title-first"></span>
+      <span class="title-second">SM2密码算法使用规范</span>
+      <span class="title-third"> </span>
+    </div>
+
+    <!-- for local standards (DB, DB/T), no en title -->
+    <div class="coverpage-title-en">
+      <span class="title-first"></span>
+      <span class="title-second">SM2 cryptography algorithm application specification</span>
+      <span class="title-third"></span>
+    </div>
+  </div>
+
+
+  <div class="coverpage-footer">
+    <!-- for local standards (DB, DB/T), no relation to ISO standards -->
+    <!-- if related to ISO standards -->
+    
+
+  <div class="coverpage-stage-block" lang="en" xml:lang="en">
+    
+    <span class="stage-if-draft">&#xFF08;IS&#xFF09;</span> <br />
+    
+    
+    <span class="revision-if-draft">&#xFF08;Completion date for this manuscript:  2012-11-22&#xFF09;</span>
+    
+    
+  </div>
+  </div>
+                </div>
+                    <div class="coverpage-dates">
+                          <span class="date-publish">Issuance Date: 2012-11-22</span>
+                          <span class="date-active">Implementation Date: 2012-11-22</span>
+                        </div>
+
+
+  <div class="coverpage_footer">
+    State Administration Of Cryptography
+  </div>
+</header>
+
+      <p>&#xA0;</p>
+    </div>
+    <br />
+    <div class="prefatory-section"><nav>
+
+  <h1 id="content">Contents</h1>
+  <div id="toc"></div>
+
+</nav>
+
+      <p>&#xA0;</p>
+    </div>
+    <br />
+    <main class="main-section"><button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+      <br />
+      <div>
+        <h1 class="ForewordTitle">Foreword&#xA0;</h1>
+        <p id="_db68fd5a-4a70-4e83-99b9-70e89a1cdbde">This standard is authored in accordance with GB/T 1.1-2009.</p>
+        <p id="_b9628f7b-052f-4002-a2bc-85840e106e86">Please note that some of this document involve patents. The publishers of this
+document do not bear responsibility of identifying these patents.</p>
+        <p id="_a4d75012-0869-4b22-8230-2cc5b330fda6">This standard is proposed and managed by the {technical-committee}.</p>
+        <p id="_cf35e922-6afc-4c0c-9af7-9c3981567710">This standard was drafted by these organizations:</p>
+        <ul>
+  <li>
+    <p id="_2b5bbf7e-caa3-4062-a5e3-ce2eb52931ad">Beijing Haitai Fangyuan Technology Co., Ltd.</p>
+  </li>
+  <li>
+    <p id="_0a1fc934-0ff6-471c-a65e-bfcd49569262">Westone Information Industry Inc.</p>
+  </li>
+  <li>
+    <p id="_252482dd-f015-49e4-bf4b-8d08f73111f5">Wuxi Jiangnan Information Technology Co., Ltd., Security Engineering Technology Center</p>
+  </li>
+  <li>
+    <p id="_20f916a5-59b9-4014-a49b-e8452df02c4c">Xingtang Telecommunications Technology Co., Ltd</p>
+  </li>
+  <li>
+    <p id="_f346a7f4-9db5-46f4-9e1a-6281a4ff8351">Shanghai Koal Software Co.</p>
+  </li>
+  <li>
+    <p id="_1a056014-b236-4e9c-929c-7e87a518a143">Shandong Dean Information Technology Co., Ltd</p>
+  </li>
+</ul>
+        <p id="_5e259a13-7488-4b6b-967f-49dc18147297">The main drafters of this standard include:</p>
+        <ul>
+  <li>
+    <p id="_d9171b22-e7e9-4285-a081-973f22ac8ec5">Liu Ping</p>
+  </li>
+  <li>
+    <p id="_5e7b1665-9269-4341-9afd-72be673d822c">Jiang Hongyu</p>
+  </li>
+  <li>
+    <p id="_57d426ea-8ac3-4a2e-8e16-2ad0b8b63017">Liu Zengshou</p>
+  </li>
+  <li>
+    <p id="_e59def25-8a43-4ce2-9d61-97611950b117">Li Yuanzheng</p>
+  </li>
+  <li>
+    <p id="_606db334-06f9-4672-966e-3957d535aa47">Xu Qiang</p>
+  </li>
+  <li>
+    <p id="_082af94b-3e45-4404-bbbb-c3245b492c71">Tan Wuzheng</p>
+  </li>
+  <li>
+    <p id="_7caab6c2-6304-48a3-b040-c5121ab63ac0">Kongfan Yu</p>
+  </li>
+  <li>
+    <p id="_f31929c0-7840-4bc2-ab40-53c64e3cc926">Wang Nina</p>
+  </li>
+</ul>
+      </div>
+      <br />
+      <div class="Section3" id="_introduction">
+        <h1 class="IntroTitle">Introduction</h1>
+        <p id="_d3916855-91cc-4edf-ae0a-164b5a17a310">The SM2 Elliptic Curve Cryptographic Algorithm (SM2) is a set of algorithms
+approved by the State Cryptographic Administration. It includes the SM2-1
+Elliptic Curve Digital Signature Algorithm, the SM2-2 Elliptic Curve Key
+Exchange Protocol, and the SM2-3 Elliptic Curve Public-Key Encryption
+algorithm.</p>
+        <p id="_bf8d3201-cb10-4592-b152-85072a1737a7">The purpose of this standard is to ensure correctness of the usage of the SM2
+cryptographic algorithms, through the standardization of a uniform data format
+and method of use.</p>
+        <p id="_ec669f96-cd26-4dfa-a031-4ff59ad1c8ba">The SM3 algorithm specified in this standard refers to the SM3 Cryptographic
+Hash Algorithm approved by the State Cryptographic Administration.</p>
+        <p id="_dc98eb87-8622-4586-9202-80606b7724a7">This standard is intended to only provide instructions on the application of
+the SM2 cryptographic algorithms, and does not provide details on their actual
+calculations.</p>
+      </div>
+      <p class="zzSTDTitle1">SM2 cryptography algorithm application specification</p>
+      <div id="scope">
+        <h1>1.&#x3000;Scope</h1>
+        <p id="_6db6b032-79bf-42bd-87b9-d6d13d6912cb">This standard defines the usage methods of the SM2 cryptographic algorithm, as
+well as data formats for secret key, encryption and signature data.</p>
+        <p id="_51955680-ace6-4dd1-9724-304bf771ba61">This standard is applicable to the usage of the SM2 cryptographic algorithm,
+and to the development and testing of devices and systems that support the
+SM2 cryptographic algorithm.</p>
+      </div>
+      <div>
+        <h1>2.&#x3000;Normative references</h1>
+        <p>The following documents are referred to in the text in such a way that some or all of their content constitutes requirements of this document. For dated references, only the edition cited applies. For undated references, the latest edition of the referenced document (including any amendments) applies.</p>
+        <p id="GMT0003" class="NormRef">GM/T 0003: All Parts, SM2&#x692D;&#x5706;&#x66F2;&#x7EBF;&#x516C;&#x94A5;&#x5BC6;&#x7801;&#x7B97;&#x6CD5; &#x7B2C;1&#x90E8;&#x5206;&#xFF1A;&#x603B;&#x5219;</p>
+        <p id="GMT0004" class="NormRef">GM/T 0004, SM3&#x5BC6;&#x7801;&#x6742;&#x51D1;&#x7B97;&#x6CD5;</p>
+      </div>
+      <div id="_terms_and_definitions"><h1>3.&#x3000;Terms and definitions</h1><p>For the purposes of this document,
+    the following terms and definitions apply.</p>
+<h2 class="TermNum" id="_algorithm_identifier">3.1</h2>
+  <p class="Terms" style="text-align:left;">algorithm identifier&#x3000;&#x7B97;&#x6CD5;&#x6807;&#x8BC6;</p> 
+  <p id="_2437dde3-4ea4-4e13-9ea1-45800e752909">used to identify the algorithm that generated a digital message</p>
+<h2 class="TermNum" id="_sm2_algorithm_sm2">3.2</h2>
+  <p class="Terms" style="text-align:left;">SM2 algorithm&#x3000;SM2&#x5BC6;&#x7801;&#x7B97;&#x6CD5;</p> 
+  <p id="_b6686a8a-ddfa-4a09-bed0-3a2068864747">an elliptic curve cryptographic algorithm, with a 256-bit long secret key.</p>
+<h2 class="TermNum" id="_sm3_algorithm_sm3">3.3</h2>
+  <p class="Terms" style="text-align:left;">SM3 algorithm&#x3000;SM3&#x7B97;&#x6CD5;</p> 
+  <p id="_3fbd3721-2b18-48ae-8bc4-ae6d9542131b">a hash algorithm with an output length of 256 bits.</p>
+</div>
+      <div id="_symbols_and_abbreviations">
+        <h1>4.&#x3000;Symbols And Abbreviations</h1>
+        <p id="_3b745d16-69ea-4f7e-a4dc-cd3383b9f02b">The following abbreviations are applicable to this document:</p>
+        <dl>
+          <dt>
+            <p>EC</p>
+          </dt>
+          <dd>
+    <p id="_27f44e5b-5e43-4bc9-8c85-fa6dce70d631">Electronic Code Book mode</p>
+  </dd>
+          <dt>
+            <p>ECC</p>
+          </dt>
+          <dd>
+    <p id="_5d0ed931-677d-4077-9073-45ac1e9421cb">Elliptic Curve Cryptography</p>
+  </dd>
+          <dt>
+            <p>ID</p>
+          </dt>
+          <dd>
+    <p id="_68187be7-c974-47ba-98ad-8464d9a0e3f6">User identification</p>
+  </dd>
+        </dl>
+      </div>
+      <div id="_sm2_key_pairs">
+        <h1>5.&#x3000;SM2 Key Pairs</h1>
+        <div id="_sm2_private_key">
+  <h2>5.1.&#x3000;SM2 Private Key</h2>
+  <p id="_db779139-6789-40d1-81af-a48b48314234">The SM2 Private Key is a whole number larger than 1 but less than (n-1) (n is
+the number of rounds of the SM2 algorithm, refer to <a href="#GMT0003">GM/T 0003: All Parts</a> for its
+value).  It is abbreviated as <tt>k</tt>, with a length of 256 bits.</p>
+</div>
+        <div id="_sm2_public_key">
+  <h2>5.2.&#x3000;SM2 Public Key</h2>
+  <p id="_1fde2de9-c080-4cde-8ff6-eb2f27b41b8d">The SM2 Public Key is a point on the SM2 Curve, represented by its x- and
+y-coordinates as <tt>(x, y)</tt>, abbreviated as <tt>Q</tt>, with each coordinate of length
+256 bits.</p>
+</div>
+      </div>
+      <div id="_data_conversion">
+        <h1>6.&#x3000;Data Conversion</h1>
+        <p id="_8716366c-f97e-4291-adf7-2e94e7d1ada9">In SM2 calculations these 4 mechanisms are used to convert between Octet
+Strings and Bit Strings.</p>
+        <div id="_bit_string_to_octet_string_conversion"><h2>6.1.&#x3000;Bit String to Octet String Conversion</h2><p id="_cc9b69b9-643d-473e-a6a9-4d11e4bb0249">If the bit string length is not a multiple of 8, add <tt>0</tt> to its left to ensure
+the length is divisible by 8. Then create an octet string as below.</p>
+<p id="_55292723-37d9-4ae6-8707-1d0a82953665">INPUT: Bit String <span class="stem">(#(B)#)</span> of length <span class="stem">(#(b l e n)#)</span></p>
+<p id="_24e05c7b-6148-411b-a322-21cfd97bdbcb">OUTPUT: Octet String <span class="stem">(#(M)#)</span> of length <span class="stem">(#(m l e n)#)</span>, <span class="stem">(#(m l e n)#)</span> is the whole
+number portion of <span class="stem">(#((b l e n + 7)/8)#)</span>.</p>
+<p id="_2f7d1cda-7a10-4f77-9ce6-121392abe6fa">STEPS: Converting bit string <span class="stem">(#(B = B_0 B_1 ... B_{b l e n - 1})#)</span> to octet
+string <span class="stem">(#(M = M_0 M_1 ... M_{m l e n - 1})#)</span>, <span class="stem">(#(0 &lt;= i &lt;= m l e n - 1)#)</span>.</p>
+<div id="_e01003f1-8c67-4b90-a9a3-5508f6efe2cd" class="formula">&#xA0; <span class="stem">(#(M_i = B_{b l e n-8-8(m l e n-1-i)} B_{b l e n-7-8(m l e n-1-i)} ... B_{b l e n-1-8(m l e n-1-i)})#)</span>&#xA0; (1)</div>
+<p id="_e1259c47-9614-428e-9c5c-89869427c7c5">For <span class="stem">(#(M_0)#)</span>, the leftmost <span class="stem">(#(8 - b l e n % 8)#)</span> positions should be set to 0, the right set to
+<span class="stem">(#(B_0 B_1 &#x2026; B_(8 - 8(m l e n) + b l e n - 1))#)</span>.</p>
+<p id="_1fe99eb5-350b-419c-84a9-28e2a4e3c663">OUTPUT <span class="stem">(#(M)#)</span>.</p></div>
+        <div id="_octet_string_to_bit_string_conversion"><h2>6.2.&#x3000;Octet String to Bit String Conversion</h2><p id="_f249167f-dc4b-47f2-b73c-72cf36e4ee1c">Octet String to Bit String Conversion as follows:</p>
+<p id="_6a86ac34-fe15-4981-bbe5-f924cc8016ad">INPUT: Octet String <span class="stem">(#(M)#)</span> of length <span class="stem">(#(m l e n)#)</span></p>
+<p id="_a334cf21-cea3-47cb-8bf6-8f97e09221e5">OUTPUT: Octet String <span class="stem">(#(B)#)</span> of length <span class="stem">(#(b l e n = (8 times m l e n))#)</span></p>
+<p id="_dfc20c18-ec5f-4ee1-82b5-5e74ae7b7aab">STEPS: Converting octet string <span class="stem">(#(M = M_0 M_1 &#x2026; M_(m l e n-1))#)</span> to bit string <span class="stem">(#(B = B_0 B_1 &#x2026; B_(b l e n-1))#)</span>, <span class="stem">(#(0 &lt;= i &lt;= m l e n-1)#)</span>.</p>
+<div id="_93716c7d-cb7d-4bcc-87bf-523bf65672c7" class="formula">&#xA0; <span class="stem">(#(B_(8i) B_(8i+1) ... B_(8i+7) = M_i)#)</span>&#xA0; (2)</div>
+<p id="_1f7ee77b-01ea-4ee9-a7b8-a7e70ef457f9">OUTPUT <span class="stem">(#(B)#)</span>.</p></div>
+        <div id="_integer_to_octet_string_conversion"><h2>6.3.&#x3000;Integer to Octet String Conversion</h2><p id="_d442e10f-1447-4ad2-b63f-ee5b5536ec99">Converting an integer into an octet string, the basic method is to first
+represent the integer in binary, and the output the bit string as an octet
+string. This is the conversion flow.</p>
+<p id="_02c857e5-15a6-4f97-85a2-fbd6223a24bd">INPUT: A non-negative <span class="stem">(#(x)#)</span>; expected octet string length <span class="stem">(#(m l e n)#)</span>.
+Where <span class="stem">(#(2^(8 (m l e n)) &gt; x)#)</span></p>
+<p id="_7e876fdf-597b-4a78-ac45-8dd5894da4ef">OUTPUT: Octet string <span class="stem">(#(M)#)</span> of length <span class="stem">(#(m l e n)#)</span></p>
+<p id="_436ea569-3d66-43f1-a201-7f7f6725e8a9">STEPS: Convert a number <span class="stem">(#(x)#)</span> based on <span class="stem">(#(2^8 = 256)#)</span>,
+<span class="stem">(#(x =x_{m l e n-1}2^(8(m l e n-1)) +x_{m l e n-2}2^(8(m l e n-2)) +... x_{1}2^8 + x_0)#)</span> into <span class="stem">(#(M = M_{0}M_{1} &#x2026; M_{m l e n-1})#)</span></p>
+<p id="_ad17ba88-fa9a-4066-9ea8-7438a2fd1d8e">Given <span class="stem">(#(0 &lt;= i &lt;= m l e n&#x2013;1)#)</span>, set:</p>
+<div id="_2f0a4626-fbc2-41b7-b943-aa584a148dc1" class="formula">&#xA0; <span class="stem">(#(M_{i} = x_{m l e n-1-i})#)</span>&#xA0; (3)</div>
+<p id="_fb3a4f1f-bc02-4254-bf72-da2271cea4e7">OUTPUT: <span class="stem">(#(M)#)</span></p></div>
+        <div id="_octet_string_to_whole_number_conversion"><h2>6.4.&#x3000;Octet String to Whole Number Conversion</h2><p id="_dba5b1d3-0e96-4af2-bd9c-4b8185b881a9">It is simple to convert an Octet String into a Base 256 whole number. Conversion
+method below.</p>
+<p id="_f74a3992-e7c7-483b-a2be-74f432a8dd1f">INPUT: Octet String <span class="stem">(#(M)#)</span></p>
+<p id="_e32cb017-2294-4fc1-a29e-eaea5b0b58c1">OUTPUT: Whole number <span class="stem">(#(x)#)</span></p>
+<p id="_b009f330-037c-4b17-b737-883ae573e887">STEPS: Convert <span class="stem">(#(M = M_0 M_1 &#x2026; M_{m l e n-1})#)</span> into whole number <span class="stem">(#(x)#)</span>.</p>
+<p id="_e12e701a-9076-4e17-b2d6-3d1fd2e9cdf7"><span class="stem">(#(M_i)#)</span> is like a whole number within <span class="stem">(#([0~255)#)</span>]</p>
+<div id="_c664bdfc-0055-4541-95b4-f53bad93040c" class="formula">&#xA0; <span class="stem">(#(x = sum_{i=0}^{m l e n-1} 2^{8(m l e n-1-i)} M_i)#)</span>&#xA0; (4)</div>
+<p id="_63e8db7d-587d-4d5f-bad7-82f8ef9107fb">Output <span class="stem">(#(x)#)</span>.</p></div>
+      </div>
+      <div id="_data_format">
+        <h1>7.&#x3000;Data Format</h1>
+        <div id="_secret_key_data_format"><h2>7.1.&#x3000;Secret Key Data Format</h2><p id="_a2ae20c5-6b36-40ee-912c-883933f61891">SM2 secret key data format as described in ASN.1 is:</p>
+<p id="_4bf3b9bc-8948-4b0a-8e40-e3c7ce16470c" class="Sourcecode">SM2PrivateKey&#xA0;::=&#xA0;INTEGER</p>
+<p id="_3af0214c-ffd2-4c9c-84fc-96a192bd2035">SM2 public key data format as described in ASN.1 is:</p>
+<p id="_35a021a4-58ba-4254-84c1-39d5aa7367e4" class="Sourcecode">SM2PublicKey&#xA0;::=&#xA0;BIT&#xA0;STRING</p>
+<p id="_3b200575-6025-43b6-b980-a2aeafe6bf08"><tt>SM2PublicKey</tt> is of type <tt>BIT STRING</tt>, content is <tt>04 | X | Y</tt>, within that, <tt>X</tt>
+and <tt>Y</tt> specifies the x- and y-coordinates of the public key, each of 256-bits
+long.</p></div>
+        <div id="_encrypted_data_format"><h2>7.2.&#x3000;Encrypted Data Format</h2><p id="_8634d8b6-cdd2-4378-8b2e-ff289021b571">SM2 encrypted data format as described in ASN.1 is:</p>
+<p id="_b0bf6892-c6b7-43d5-bc47-65f7aae3eab6" class="Sourcecode">SM2Cipher&#xA0;::=&#xA0;SEQENCE{<br />&#xA0;&#xA0;XCoordinate&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;INTEGER,&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;--&#xA0;x-coordinate<br />&#xA0;&#xA0;YCoordinate&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;INTEGER,&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;--&#xA0;y-coordinate<br />&#xA0;&#xA0;HASH&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;OCTET&#xA0;STRING&#xA0;SIZE(32),&#xA0;&#xA0;--&#xA0;hash&#xA0;value<br />&#xA0;&#xA0;CipherText&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;OCTET&#xA0;STRING&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;--&#xA0;ciphertext<br />}</p>
+<p id="_10f3a566-b5ca-4fcd-ae67-4174d3d84eeb"><tt>HASH</tt> is the hash value calculated from SM3, with a fixed bit length of
+256-bits. <tt>CipherText</tt> is of same length as its plaintext.</p></div>
+        <div id="_signature_data_format"><h2>7.3.&#x3000;Signature Data Format</h2><p id="_b19e6eef-d054-410f-aff7-033a5d047f66">SM2 signature data format as described in ASN.1 is:</p>
+<p id="_13ee921c-b1ac-4835-b5a3-1b82738470dc" class="Sourcecode">SM2Signature&#xA0;::=&#xA0;SEQUENCE{<br />&#xA0;&#xA0;R&#xA0;&#xA0;&#xA0;INTEGER,&#xA0;&#xA0;--&#xA0;first&#xA0;portion&#xA0;of&#xA0;signature<br />&#xA0;&#xA0;S&#xA0;&#xA0;&#xA0;INTEGER&#xA0;&#xA0;&#xA0;--&#xA0;second&#xA0;portion&#xA0;of&#xA0;signature<br />}</p>
+<p id="_5e9e5fc3-127c-46b8-b626-8994bf93e4a0"><tt>R</tt> and <tt>S</tt> are of 256 bits long.</p></div>
+        <div id="_enveloped_secret_key_data_format"><h2>7.4.&#x3000;Enveloped Secret Key Data Format</h2><p id="_1b27afc3-88e8-43b1-b1a8-260f7c10608d">When transferring a SM2 secret key, the SM2 secret key should be encrypted. The
+encryption method is:</p>
+<ol type="a">
+  <li>
+    <p id="_c2148814-87df-4bcc-bb26-a90eb08ffedd">Create a symmetric secret key;</p>
+  </li>
+  <li>
+    <p id="_91075c5d-0027-4445-be58-b0b9d92dfc5f">According to the necessary calculation methods, encrypt the SM2 private key
+to obtain the private key&#x2019;s ciphertext. If the symmetric encryption method is a
+block cipher, utilize ECB mode;</p>
+  </li>
+  <li>
+    <p id="_f4b86e5a-25ff-4646-b5c0-734db61be0ff">Utilize SM2 public key to encrypt the symmetric secret key to obtain
+symmetric secret key ciphertext;</p>
+  </li>
+  <li>
+    <p id="_32955999-8875-493f-a38f-89702f7c59f3">Put the SM2 private key ciphertext, symmetric secret key ciphertext into an
+Enveloped Key Data Format.</p>
+  </li>
+</ol>
+<p id="_60357c91-7cf6-41b7-a7c6-4d46bc9d312b">SM2 Enveloped Secret Key data format as described in ASN.1 is:</p>
+<p id="_e9e98b0e-8c0b-4eb1-a544-7e7ddd1b327c" class="Sourcecode">SM2EnvelopedKey&#xA0;::=&#xA0;&#xA0;SEQUENCE{<br />&#xA0;&#xA0;symAlgID&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;AlgorithmIdentifier,&#xA0;&#xA0;--&#xA0;Symmetric&#xA0;Encryption&#xA0;Algorithm&#xA0;ID<br />&#xA0;&#xA0;symEncryptedKey&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;SM2Cipher,&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;--&#xA0;Symmetric&#xA0;Encryption&#xA0;Key&#xA0;encrypted&#xA0;by&#xA0;SM2&#xA0;Public&#xA0;Key<br />&#xA0;&#xA0;Sm2PublicKey&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;SM2PublicKey,&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;--&#xA0;SM2&#xA0;Public&#xA0;Key<br />&#xA0;&#xA0;Sm2EncryptedPrivateKey&#xA0;&#xA0;BIT&#xA0;STRING&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;--&#xA0;SM2&#xA0;Private&#xA0;Key&#xA0;Encrypted&#xA0;by&#xA0;Symmetric&#xA0;Encryption<br />}</p></div>
+      </div>
+      <div id="_pre_processing">
+        <h1>8.&#x3000;Pre-processing</h1>
+        <div id="_pre_processing_1"><h2>8.1.&#x3000;Pre-processing 1</h2><p id="_d845811e-f46d-4407-9d0f-493f193907de">Pre-processing 1 is to use the signing party&#x2019;s identifier and signature public
+key, to calculate value <tt>Z</tt>.
+<tt>Z</tt> is used in pre-processing 2, which is the SM2 key negotiation.</p>
+<p id="_671f3068-dad0-45a9-8519-3db794519cab">INPUT:</p>
+<ul>
+  <li>
+    <p id="_4e0a8976-a6c9-47cb-8095-9946d2185e36"><tt>ID</tt>: Byte String. User Identifier.</p>
+  </li>
+  <li>
+    <p id="_ea1ada0e-e969-424f-b22d-c2dca88aa062"><tt>Q</tt>: <tt>SM2PublicKey</tt>. User Public Key.</p>
+  </li>
+</ul>
+<p id="_de4a3f0a-8ca0-49ce-a5d4-66b3f5a7882f">OUTPUT:</p>
+<ul>
+  <li>
+    <p id="_4d3c0d97-f7e0-4f2f-8927-684c06b21f1f"><tt>Z</tt>: Byte String. Output of Pre-processing 1.</p>
+  </li>
+</ul>
+<p id="_d0f49764-50b1-4e0f-ac3e-277230dc48f0">Formula is:</p>
+<p id="_5513231a-cbaa-4683-bd11-82446b50abf7" class="Sourcecode">Z&#xA0;=&#xA0;SM3(ENTL|ID|a|b|xG|yG|xA|yA)</p>
+<p id="_a0a05029-801c-44c5-ae63-f5b08c597f72">Where:</p>
+<ul>
+  <li>
+    <p id="_e76d5f7d-0cfd-4cb3-b11e-56c053f0ac53"><tt>ENTL</tt> is a 2 byte field indicating bit-length of ID;</p>
+  </li>
+  <li>
+    <p id="_bf251df6-6458-4365-a666-f084678db4d5"><tt>ID</tt> is the User Identifier;</p>
+  </li>
+  <li>
+    <p id="_010c9996-124e-46eb-962a-9cd8d269a150"><tt>a</tt>, <tt>b</tt> is the System Curve Parameter;</p>
+  </li>
+  <li>
+    <p id="_b1e4ce49-2e08-4b77-b3cd-074dc6582c77"><tt>xG</tt>, <tt>yG</tt> are the base points;</p>
+  </li>
+  <li>
+    <p id="_ee7ab422-b6ae-4bd0-8832-fe8e21d575c9"><tt>xA</tt>, <tt>yA</tt> represents the User&#x2019;s Public Key.</p>
+  </li>
+</ul>
+<p id="_945674dc-af75-43c1-9452-122a7db6fc94">For detailed calculations see <a href="#GMT0003">GM/T 0003: All Parts</a> and <a href="#GMT0004">GM/T 0004</a>.</p></div>
+        <div id="_pre_processing_2"><h2>8.2.&#x3000;Pre-processing 2</h2><p id="_9fdb90db-451d-4b81-8a55-f315a453fb0f">Pre-processing 2 is the process of using value <tt>Z</tt> and the message to be signed,
+utilize SM3 to calculate hash value <tt>H</tt>. Hash value <tt>H</tt> is used for
+the calculation of SM2 digital signatures.</p>
+<p id="_ad4544e9-03aa-4ba2-89f5-eed6af789a19">INPUT:</p>
+<ul>
+  <li>
+    <p id="_2765d2bd-b14e-4e23-aa0c-947f749f024a"><tt>Z</tt>: Byte String. Input to Pre-processing 2.</p>
+  </li>
+  <li>
+    <p id="_d85f0f2f-1b96-4592-86e5-dbd80bc32369"><tt>M</tt>: Byte String. Message to be signed.</p>
+  </li>
+</ul>
+<p id="_a33a02e1-9d08-43ba-908e-1a30ad1d480b">OUTPUT:</p>
+<ul>
+  <li>
+    <p id="_de659e76-05fb-4322-b14e-92fe7c41d442"><tt>H</tt>: Byte String. Hash Value.</p>
+  </li>
+</ul>
+<p id="_a147fd93-f3ba-4631-bd0b-c97b3332c6d7">Calculation:</p>
+<p id="_64d7769f-f160-4616-858a-b31ad43bab95" class="Sourcecode">H&#xA0;=&#xA0;SM3(Z|M)</p>
+<p id="_94afc905-a724-4f14-a67c-1846b32b436f">For detailed calculations see <a href="#GMT0003">GM/T 0003: All Parts</a> and <a href="#GMT0004">GM/T 0004</a>.</p></div>
+      </div>
+      <div id="_calculation_process">
+        <h1>9.&#x3000;Calculation Process</h1>
+        <div id="_generation_of_secret_key"><h2>9.1.&#x3000;Generation of Secret Key</h2><p id="_5806bfc1-ed6e-406b-927d-82331b0efdf4">SM2 secret key generation is the process of using SM2 calculations to create a
+pair of keys, this pair of keys include a private key and the corresponding
+public key. The private key is of 256-bits long and the public key 512-bits
+long.</p>
+<p id="_13188643-fb21-451d-9089-9570b325c7da">INPUT:</p>
+<ul>
+  <li>
+    <p id="_cee7efcd-a653-450c-b118-5415654452b2">None</p>
+  </li>
+</ul>
+<p id="_090978fb-cb56-4308-80ba-7a7250434612">OUTPUT:</p>
+<ul>
+  <li>
+    <p id="_6de6cf47-e0b3-40e4-90ea-f37f16d7d088"><tt>k</tt>: <tt>SM2PrivateKey</tt>. SM2 Private Key.</p>
+  </li>
+  <li>
+    <p id="_6c746a5b-2b7e-42ef-9196-9d66a6501f3b"><tt>Q</tt>: <tt>SM2PublicKey</tt>. SM2 Public Key.</p>
+  </li>
+</ul>
+<p id="_a5c1d9f3-9685-45b2-8473-402834a8c11d">For detailed calculations see <a href="#GMT0003">GM/T 0003: All Parts</a>.</p></div>
+        <div id="_encryption"><h2>9.2.&#x3000;Encryption</h2><p id="_5dd39bb3-a16a-41ab-be94-8c2006161f47">SM2 Encryption is to use the public key of the given key pair to perform
+encryption, in order to generate ciphertext. This ciphertext can only be
+decrypted by the corresponding private key.</p>
+<p id="_2da086d2-a6ad-4197-9c0a-7bfd61915e40">INPUT:</p>
+<ul>
+  <li>
+    <p id="_17a086f3-1ea4-449f-be2d-4ff0b53df12a"><tt>Q</tt>: <tt>SM2PublicKey</tt>. SM2 Public Key.</p>
+  </li>
+  <li>
+    <p id="_049842e4-5ea4-4303-9217-c37b3b826bc5"><tt>m</tt>: Byte String. Plaintext To Be Encrypted.</p>
+  </li>
+</ul>
+<p id="_4c5f0fc6-0a69-4fd9-8c3f-fea8739079e1">OUTPUT:</p>
+<ul>
+  <li>
+    <p id="_636f1c1d-8021-4504-9c4f-1d0a1c669e36"><tt>c</tt>: <tt>SM2Cipher</tt>. Ciphertext.</p>
+  </li>
+</ul>
+<p id="_910c150a-1bef-43b5-81d0-69eda9e994a1">Where:</p>
+<ul>
+  <li>
+    <p id="_9447093f-65f9-4e53-bb81-c21671be52d6">Output <tt>c</tt> is in the format defined by Section 7.2;</p>
+  </li>
+  <li>
+    <p id="_f31b0f0b-c76d-434e-9f57-630e6b942872">Output <tt>c&#x2019;s `XCoordinate</tt>, <tt>YCoordinate</tt> are randomly generated x- and y-coordinates;</p>
+  </li>
+  <li>
+    <p id="_b55ec35d-d4c2-4013-869b-493cc4534564">Output <tt>c&#x2019;s `HASH</tt> was calculated as <tt>HASH = SM3( x | m | y )</tt>, where <tt>x</tt>, <tt>y</tt> are
+`Q&#x2019;s x- and y-coordinates;</p>
+  </li>
+</ul>
+<p id="_9fa388e8-2707-42f2-b242-b19a7ac40195">Output `c&#x2019;s CipherText is the ciphertext, its length is identical to that of
+the plaintext.</p>
+<p id="_8cf41388-4c4d-492d-aef1-352d9eb59984">For detailed calculations see <a href="#GMT0003">GM/T 0003: All Parts</a> and <a href="#GMT0004">GM/T 0004</a>.</p></div>
+        <div id="_decryption"><h2>9.3.&#x3000;Decryption</h2><p id="_b26b724e-5771-4e36-bafe-21c624700ecd">SM2 Decryption means using a private key to decrypt a ciphertext encrypted by
+the corresponding public key to obtain the plaintext.</p>
+<p id="_3df02632-63b2-439c-a845-7678cb407cc8">INPUT:</p>
+<ul>
+  <li>
+    <p id="_cecf1d0a-e357-409e-9c10-8da9aea5ba4d"><tt>d</tt>: <tt>SM2PrivateKey</tt>. SM2 private key.</p>
+  </li>
+  <li>
+    <p id="_cf3adbaa-5fa1-4b7b-a8d6-7378bb2b6df4"><tt>c</tt>: <tt>SM2Cipher</tt>. Ciphertext.</p>
+  </li>
+</ul>
+<p id="_2a6eecb4-346c-4554-a79f-a7299a1aeaa1">OUTPUT:</p>
+<ul>
+  <li>
+    <p id="_bff718c6-60ee-406e-a178-ede413010260"><tt>m</tt>: Byte String. Corresponding plaintext to ciphertext.</p>
+  </li>
+</ul>
+<p id="_05522269-663d-4f95-82a4-6c2db4d49e11"><tt>m</tt> is the decrypted plaintext of <tt>SM2Cipher</tt>, the length of plaintext is
+the same as that of the input ciphertext <tt>c</tt>.</p>
+<p id="_85b2e8de-cb5d-40f4-92a4-3d9b64406877">For detailed calculations see <a href="#GMT0003">GM/T 0003: All Parts</a>.</p></div>
+        <div id="_digital_signature"><h2>9.4.&#x3000;Digital Signature</h2><p id="_a5b1f269-6177-41b1-afe1-36960805bfd8">SM2 signature is to obtain a signature by using the result of pre-processing
+2&#x2019;s together with the signer&#x2019;s private key through the signing process.</p>
+<p id="_08166c56-6066-443c-97a2-978e4dbe7fe8">INPUT:</p>
+<ul>
+  <li>
+    <p id="_2632d488-f385-4cdf-a4e1-1983fff635b7"><tt>d</tt>: <tt>SM2PrivateKey</tt>. Signer&#x2019;s Private Key.</p>
+  </li>
+  <li>
+    <p id="_cde78475-5557-4ede-8406-25454c6428fc"><tt>H</tt>: Byte String. Result of Pre-processing 2.</p>
+  </li>
+</ul>
+<p id="_35cd7527-845c-4d33-a2f6-a097e5ba6b92">OUTPUT:</p>
+<ul>
+  <li>
+    <p id="_b982ee91-b67b-4ab4-b9ae-2a71ad0ec602"><tt>sign</tt>: <tt>SM2Signature</tt>. Signature value.</p>
+  </li>
+</ul>
+<p id="_d5a1cc53-a124-42a3-b627-086006cd8259">For detailed calculations see <a href="#GMT0003">GM/T 0003: All Parts</a>.</p></div>
+        <div id="_signature_verification"><h2>9.5.&#x3000;Signature Verification</h2><p id="_dc92f37b-31fc-4280-9193-ea5dd52a0296">SM2 signature verification is to verify a signature through using the result of
+pre-processing 2, the signature value and the signer&#x2019;s public key, through a
+verification process.</p>
+<p id="_1be1efeb-a31e-42ec-8ebf-2151416ae7d9">INPUT:</p>
+<ul>
+  <li>
+    <p id="_9210b3d2-3b57-4e3d-b292-742a58293bd0"><tt>H</tt>. Byte String. Result of Pre-processing 2</p>
+  </li>
+  <li>
+    <p id="_4ea047f5-254e-47ff-8000-b79984c5ecb4"><tt>sign</tt>. <tt>SM2Signature</tt>. Signature value</p>
+  </li>
+  <li>
+    <p id="_34288786-2f26-46a4-945c-d22a08c228c8"><tt>Q</tt>. <tt>PublicKey</tt>. Signer&#x2019;s Public Key.</p>
+  </li>
+</ul>
+<p id="_e00e43a9-070d-4e49-8e6e-fafb10fb8222">OUTPUT:</p>
+<ul>
+  <li>
+    <p id="_1ade652f-ace9-4922-893a-0ce0b9f71d4f"><tt>true</tt> if "validation passed", <tt>false</tt> if "validation failed".</p>
+  </li>
+</ul>
+<p id="_72f7e0dd-68be-49a0-bce8-3dfe2ba909ed">For detailed calculations see <a href="#GMT0003">GM/T 0003: All Parts</a>.</p></div>
+        <div id="_secret_key_negotiation"><h2>9.6.&#x3000;Secret Key Negotiation</h2><p id="_ced0fed4-f998-4c50-bcd5-64b92f4c66db">Secret key negotiation is the negotiation process between two users for the
+setup of a shared secret key.</p>
+<p id="_6ddf2d98-74f9-42c0-8cad-491886dd6266">Assume the parties of negotiation are <span class="stem">(#(A)#)</span> and <span class="stem">(#(B)#)</span>, their secret key
+pairs are <span class="stem">(#((d_A, Q_A))#)</span> and <span class="stem">(#((d_B, Q_B))#)</span>, both parties need to receive
+a secret key data of <span class="stem">(#(k l e n)#)</span> bits long.
+Secret key negotiation is split into two stages.</p>
+<div id="_stage_1_create_a_temporary_secret_key_pair"><h3>9.6.1.&#x3000;Stage 1: Create A Temporary Secret Key Pair</h3><p id="_be342b29-d9cc-4742-8d9c-2d3e1f4ff721">User <span class="stem">(#(A)#)</span>:</p>
+<ul>
+  <li>
+    <p id="_fdfb788f-2bab-4b6c-9bfd-308d15b463a6">Utilize the secret key generation algorithm to create temporary key pair <span class="stem">(#((r_A, R_A))#)</span>,
+send <span class="stem">(#(R_A)#)</span> and user <span class="stem">(#(A)#)</span>'s user identifier <span class="stem">(#(ID_A)#)</span> to user <span class="stem">(#(B)#)</span>.</p>
+  </li>
+</ul>
+<p id="_ccf77e84-94ad-4717-8065-2344468899ec">User <span class="stem">(#(B)#)</span>:</p>
+<ul>
+  <li>
+    <p id="_674183ee-b81a-4794-bdfd-187ce9095a16">Utilize the secret key generation algorithm to create temporary key pair <span class="stem">(#((r_B, R_B))#)</span>,
+send <span class="stem">(#(R_B)#)</span> and user <span class="stem">(#(B)#)</span>'s user identifier <span class="stem">(#(ID_B)#)</span> to user <span class="stem">(#(A)#)</span>.</p>
+  </li>
+</ul></div>
+<div id="_stage_2_calculate_the_shared_secret_key"><h3>9.6.2.&#x3000;Stage 2: Calculate The Shared Secret Key</h3><p id="_01d47626-0e85-448f-8a15-6fee77498f14">User <span class="stem">(#(A)#)</span>:</p>
+<ul>
+  <li>
+    <p id="_05e1f4c0-9aa4-45c3-8722-384598ff9708">INPUTS:</p>
+    <ul>
+  <li>
+    <p id="_0fb2a2c8-d2eb-4d0d-8def-a430b04fbc78"><span class="stem">(#(Q_A)#)</span>: <tt>SM2PublicKey</tt>. User <span class="stem">(#(A)#)</span>'s public key.</p>
+  </li>
+  <li>
+    <p id="_34cd0cca-befa-4338-a4a7-b2ebc287a90d"><span class="stem">(#(Q_B)#)</span>: <tt>SM2PublicKey</tt>. User <span class="stem">(#(B)#)</span>'s public key.</p>
+  </li>
+  <li>
+    <p id="_6385b40d-c7cd-40d5-9bb7-9833c78dbda5"><span class="stem">(#(R_A)#)</span>: <tt>SM2PublicKey</tt>. User <span class="stem">(#(A)#)</span>'s temporary public key.</p>
+  </li>
+  <li>
+    <p id="_08ed74e5-f51e-473d-9435-f8b4230eee9f"><span class="stem">(#(ID_A)#)</span>: <tt>OCTET STRING</tt>. User <span class="stem">(#(A)#)</span>'s user identifier.</p>
+  </li>
+  <li>
+    <p id="_4701e548-a4a3-4b5c-b515-62d51bc267bb"><span class="stem">(#(R_B)#)</span>: <tt>SM2PublicKey</tt>. User <span class="stem">(#(B)#)</span>'s temporary public key.</p>
+  </li>
+  <li>
+    <p id="_a59c4db4-b41d-474e-a780-d1b1c794da31"><span class="stem">(#(ID_B)#)</span>: <tt>OCTET STRING</tt>. User <span class="stem">(#(A)#)</span>'s user identifier.</p>
+  </li>
+  <li>
+    <p id="_69d18a3e-331f-4289-9b55-5bd3011b3191"><span class="stem">(#(d_A)#)</span>: <tt>SM2PrivateKey</tt>. User <span class="stem">(#(A)#)</span>'s private key.</p>
+  </li>
+  <li>
+    <p id="_60286059-a8ad-4a88-b5a5-83494d430330"><span class="stem">(#(r_A)#)</span>: <tt>SM2PrivateKey</tt>. User <span class="stem">(#(A)#)</span>'s temporary private key.</p>
+  </li>
+  <li>
+    <p id="_79a412bd-236f-45a4-95f8-14b7275e4910"><span class="stem">(#(k l e n)#)</span>: <tt>INTEGER</tt>. Required bit-length of shared secret key.</p>
+  </li>
+</ul>
+  </li>
+  <li>
+    <p id="_c40fe8e1-868d-4100-8c63-475a773723a7">OUTPUTS:</p>
+    <ul>
+  <li>
+    <p id="_388f1230-18ba-4a55-af27-ebfe8a37df55"><span class="stem">(#(K)#)</span>: <tt>OCTET STRING</tt>. Secret key of <span class="stem">(#(k l e n)#)</span> bits long.</p>
+  </li>
+</ul>
+  </li>
+  <li>
+    <p id="_0daef2d1-ad81-4129-abac-4eba6ae3fc23">STEPS:</p>
+    <ol type="1">
+  <li>
+    <p id="_ff82a66d-4b6b-4fae-aee6-dadf65da330b">Use <span class="stem">(#(ID_A)#)</span> and <span class="stem">(#(Q_A)#)</span> as input to pre-processing 1 to obtain <span class="stem">(#(Z_A)#)</span>;</p>
+  </li>
+  <li>
+    <p id="_86274a05-8de2-4823-9a53-f9d811f77879">Use <span class="stem">(#(ID_B)#)</span> and <span class="stem">(#(Q_B)#)</span> as input to pre-processing 1 to obtain <span class="stem">(#(Z_B)#)</span>;</p>
+  </li>
+  <li>
+    <p id="_85a46e2e-e174-4223-8cb6-535db55e0b1a">Use <span class="stem">(#(k l e n)#)</span>, <span class="stem">(#(Z_A)#)</span>, <span class="stem">(#(Z_B)#)</span>, <span class="stem">(#(d_A)#)</span>, <span class="stem">(#(r_A)#)</span>,
+<span class="stem">(#(R_A)#)</span>, <span class="stem">(#(Q_B)#)</span>, <span class="stem">(#(R_B)#)</span> as input to calculate <span class="stem">(#(K)#)</span>.</p>
+  </li>
+</ol>
+  </li>
+</ul>
+<p id="_bb723fe0-ee58-4a75-9863-939e4c6c000e">User <span class="stem">(#(B)#)</span>:</p>
+<ul>
+  <li>
+    <p id="_42911f82-d701-4760-b120-7d0e670ef0f9">INPUTS:</p>
+    <ul>
+  <li>
+    <p id="_37f21428-9374-4511-bcc1-15988b12fd85"><span class="stem">(#(Q_B)#)</span>: <tt>SM2PublicKey</tt>. User <span class="stem">(#(B)#)</span>'s public key.</p>
+  </li>
+  <li>
+    <p id="_218e25a5-11cc-4806-bf4b-a4b225cd1c6e"><span class="stem">(#(Q_A)#)</span>: <tt>SM2PublicKey</tt>. User <span class="stem">(#(A)#)</span>'s public key.</p>
+  </li>
+  <li>
+    <p id="_021ff84a-d7de-47f2-9a66-edc2d4e5369e"><span class="stem">(#(R_B)#)</span>: <tt>SM2PublicKey</tt>. User <span class="stem">(#(B)#)</span>'s temporary public key.</p>
+  </li>
+  <li>
+    <p id="_b17ed9d0-bbf9-4989-a692-4a77bdcab4da"><span class="stem">(#(ID_B)#)</span>: <tt>OCTET STRING</tt>. User <span class="stem">(#(A)#)</span>'s user identifier.</p>
+  </li>
+  <li>
+    <p id="_44f46b5a-ebf8-4a37-932f-8ccc7af7b285"><span class="stem">(#(R_A)#)</span>: <tt>SM2PublicKey</tt>. User <span class="stem">(#(A)#)</span>'s temporary public key.</p>
+  </li>
+  <li>
+    <p id="_d1ea387a-9edc-44f5-8ad7-25bc5f8b48bd"><span class="stem">(#(ID_A)#)</span>: <tt>OCTET STRING</tt>. User <span class="stem">(#(A)#)</span>'s user identifier.</p>
+  </li>
+  <li>
+    <p id="_a2cb6e4e-78a7-41f9-b907-1962a316925d"><span class="stem">(#(d_B)#)</span>: <tt>SM2PrivateKey</tt>. User <span class="stem">(#(B)#)</span>'s private key.</p>
+  </li>
+  <li>
+    <p id="_1e7d9000-6d3e-4abf-8442-bd98eadd431a"><span class="stem">(#(r_B)#)</span>: <tt>SM2PrivateKey</tt>. User <span class="stem">(#(B)#)</span>'s temporary private key.</p>
+  </li>
+  <li>
+    <p id="_c332c01a-39b9-4b73-a20a-04ffc9eb8850"><span class="stem">(#(k l e n)#)</span>: <tt>INTEGER</tt>. Required bit-length of shared secret key.</p>
+  </li>
+</ul>
+  </li>
+  <li>
+    <p id="_5c67e9b3-a398-47f4-9de9-2ec016c118cc">OUTPUTS:</p>
+    <ul>
+  <li>
+    <p id="_0fe19775-3ac8-472b-a52c-ce97b6c1f290"><span class="stem">(#(K)#)</span>: <tt>OCTET STRING</tt>. Secret key of <span class="stem">(#(k l e n)#)</span> bits long.</p>
+  </li>
+</ul>
+  </li>
+  <li>
+    <p id="_fd2a048a-0dbb-4e3d-9e1a-ffe89e08dc95">STEPS:</p>
+    <ol type="1">
+  <li>
+    <p id="_4b2dc678-f410-421c-88cb-640a035871be">Use <span class="stem">(#(ID_A)#)</span> and <span class="stem">(#(Q_A)#)</span> as input to pre-processing 1 to obtain <span class="stem">(#(Z_A)#)</span>;</p>
+  </li>
+  <li>
+    <p id="_181b8a97-186e-4e73-817e-3f0b85aae4e4">Use <span class="stem">(#(ID_B)#)</span> and <span class="stem">(#(Q_B)#)</span> as input to pre-processing 1 to obtain <span class="stem">(#(Z_B)#)</span>;</p>
+  </li>
+  <li>
+    <p id="_30a8d61a-ebb9-4993-84cb-2cbf1013a2e0">Use <span class="stem">(#(k l e n)#)</span>, <span class="stem">(#(Z_A)#)</span>, <span class="stem">(#(Z_B)#)</span>, <span class="stem">(#(d_A)#)</span>, <span class="stem">(#(r_A)#)</span>,
+<span class="stem">(#(R_A)#)</span>, <span class="stem">(#(Q_B)#)</span>, <span class="stem">(#(R_B)#)</span> as input to calculate <span class="stem">(#(K)#)</span>.</p>
+  </li>
+</ol>
+  </li>
+</ul>
+<p id="_3fe756cb-0e99-4305-a5c6-8322f5dcc7ff">For detailed calculations see <a href="#GMT0003">GM/T 0003: All Parts</a> and <a href="#GMT0004">GM/T 0004</a>.</p></div></div>
+      </div>
+      <div id="_default_value_for_user_identifier_id">
+        <h1>10.&#x3000;Default Value For User Identifier ID</h1>
+        <p id="_e1fdf70a-5c06-439e-b1c0-97e8868f25d9">Without pre-agreement, the user identifier <tt>ID</tt> should have length of 16 bytes,
+with the default value from left to right as the following
+(the ASCII hexadecimal representation of string <tt>1234567812345678</tt>):</p>
+        <p id="_ed3ec012-ddd4-4bd1-b302-c0b4f4476aeb" class="Sourcecode">0x31&#xA0;0x32&#xA0;0x33&#xA0;0x34&#xA0;0x35&#xA0;0x36&#xA0;0x37&#xA0;0x38&#xA0;0x31&#xA0;0x32&#xA0;0x33&#xA0;0x34&#xA0;0x35&#xA0;0x36&#xA0;0x37&#xA0;0x38</p>
+      </div>
+      <br />
+      <div>
+        <h1 class="Section3">Bibliography</h1>
+      </div>
+      <hr width="25%" />
+    </main>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    asciimath2jax: {
+      delimiters: [['(#(', ')#)']]
+    }
+ });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=AM_HTMLorMML"></script>
+<script>
+    //TOC generation
+      $('#toc').toc({
+          'selectors': 'h1,h2:not(.TermNum)', //elements to use as headings
+          'container': 'main', //element to find all selectors in
+          'smoothScrolling': true, //enable or disable smooth scrolling on click
+          'prefix': 'toc', //prefix for anchor tags and class names
+          'onHighlight': function(el) {}, //called when a new section is highlighted 
+          'highlightOnScroll': true, //add class to heading that is currently in focus
+          'highlightOffset': 100, //offset to trigger the next headline
+          'anchorName': function(i, heading, prefix) { //custom function for anchor name
+              return prefix+i;
+          },
+          'headerText': function(i, heading, $heading) { //custom function building the header-item text
+              return $heading.text();
+          },
+      'itemClass': function(i, heading, $heading, prefix) { // custom function for item class
+        return $heading[0].tagName.toLowerCase();
+      }
+      });
+      
+  </script>
+
+  <script>
+  //TOC toggle animation
+$('#toggle').on('click', function(){
+    if( $('nav').is(':visible') ) {
+        $('nav').animate({ 'left': '-353px' }, 'slow', function(){
+            $('nav').hide();
+        });
+        $('body').animate({ 'margin-left': '0' }, 'slow');
+    }
+    else {
+        $('nav').show();
+        $('nav').animate({ 'left': '0px' }, 'slow');
+        $('body').animate({ 'margin-left': '298px' }, 'slow');
+    }
+});
+</script>
+
+<script>
+    // Scroll to top button
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            document.getElementById("myBtn").style.display = "block";
+        } else {
+            document.getElementById("myBtn").style.display = "none";
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+    </script>
+
+<script>
+  $(document).ready(function() {
+          $('[id^=toc]').each(function ()
+          {
+             var currentToc = $(this);
+       var url = window.location.href;
+             currentToc.wrap("<a href='" + url + "#" + currentToc.attr("id") + "' </a>");
+          });
+});
+</script></body>
+</html>
