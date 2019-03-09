@@ -1,6 +1,6 @@
 = GM/T 0009-2012 SM2 Cryptography Algorithm Application Specification
 
-This is a re-creation of the GM/T 0009-2012 document using https://github.com/riboseinc/asciidoctor-gb/[asciidoctor-gb] using the https://github.com/riboseinc/gbdoc[GbDoc] model.
+This is a re-creation of the GM/T 0009-2012 document using https://github.com/metanorma/metanorma-gb/[asciidoctor-gb] using the https://github.com/metanorma/metanorma-model-gb[GbDoc] model.
 
 The output is in `.doc` and `.html` formats.
 
