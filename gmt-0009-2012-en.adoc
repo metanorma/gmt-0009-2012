@@ -1,6 +1,4 @@
 = GM/T 0009-2012 SM2 Cryptographic Algorithm Application Specification
-Ronald Tse <ronald.tse@ribose.com>
-v0.1, February 9, 2018: Initial Import
 :docnumber: 0009
 :edition: 1
 :revdate: 2012-11-22
@@ -10,16 +8,18 @@ v0.1, February 9, 2018: Initial Import
 :title-main-zh: SM2密码算法使用规范
 :title-main-en: SM2 cryptography algorithm application specification
 :published-date: 2012-11-22
-:activated-date: 2012-11-22
-:technical-committee-number:
+:implemented-date: 2012-11-22
 :technical-committee-type: technical
-:technical-committee: State Cryptographic Administration of China
-:technical-committee-zh: 国家密码管理局
 :library-ics: 35.040
 :library-ccs: L80
 :scope: sector
-:prefix: GM
+:topic: method
+:prefix: GM/T
 :mandate: recommended
+:library-ics: 35.040
+:library-ccs: L80
+:proposer: State Cryptography Administration
+:authority: State Cryptography Administration
 :stem:
 
 :sectnums!:
@@ -31,7 +31,7 @@ This standard is authored in accordance with GB/T 1.1-2009.
 Please note that some of this document involve patents. The publishers of this
 document do not bear responsibility of identifying these patents.
 
-This standard is proposed and managed by the State Cryptographic Administration of China.
+This standard is proposed and managed by the {technical-committee}.
 
 This standard was drafted by these organizations:
 
@@ -75,6 +75,7 @@ calculations.
 
 :sectnums:
 
+[[scope]]
 == Scope
 
 This standard defines the usage methods of the SM2 cryptographic algorithm, as
@@ -162,10 +163,8 @@ string stem:[M = M_0 M_1 ... M_{m l e n - 1}], stem:[0 <= i <= m l e n - 1].
 M_i = B_{b l e n-8-8(m l e n-1-i)} B_{b l e n-7-8(m l e n-1-i)} ... B_{b l e n-1-8(m l e n-1-i)}
 ++++
 
-[stem]
-++++
-M_0 = text(the leftmost ) 8 - b l e n % 8 text( position set to ) 0 text(, the right of it is ) B_0 B_1 … B_(8 - 8(m l e n) + b l e n - 1)
-++++
+For stem:[M_0], the leftmost stem:[8 - b l e n % 8] positions should be set to 0, the right set to
+stem:[B_0 B_1 … B_(8 - 8(m l e n) + b l e n - 1)].
 
 OUTPUT stem:[M].
 
@@ -182,7 +181,7 @@ STEPS: Converting octet string stem:[M = M_0 M_1 … M_(m l e n-1)] to bit strin
 
 [stem]
 ++++
-B_(8i) B_(8i+1) … B_(8i+7) = M_i
+B_(8i) B_(8i+1) ... B_(8i+7) = M_i
 ++++
 
 OUTPUT stem:[B].
