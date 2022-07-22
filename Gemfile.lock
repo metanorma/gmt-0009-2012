@@ -62,6 +62,7 @@ GEM
     camertron-eprun (1.1.1)
     cldr-plurals-runtime-rb (1.0.1)
     cnccs (0.1.2)
+    concurrent-ruby (1.1.10)
     ffi (1.9.25)
     gb-agencies (0.0.3)
     gbbib (0.2.2)
@@ -147,8 +148,8 @@ GEM
       camertron-eprun
       cldr-plurals-runtime-rb (~> 1.0)
       tzinfo
-    tzinfo (1.2.5)
-      thread_safe (~> 0.1)
+    tzinfo (2.0.5)
+      concurrent-ruby (~> 1.0)
     uuidtools (2.1.5)
 
 PLATFORMS
